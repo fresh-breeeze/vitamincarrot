@@ -94,7 +94,7 @@ nav a.active {
 }
 
 main {
-  max-width: 1160px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 48px 32px 96px;
 }
@@ -214,6 +214,17 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 .usage-card p { font-size: 14px !important; color: var(--gray-600); line-height: 1.6; text-align: left; }
 .usage-card b { color: var(--black); }
 
+.segment-grid.equal-row {
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.segment-grid.equal-row > .usage-card { flex: 1 1 0; }
+
+@media (max-width: 760px) {
+  .segment-grid.equal-row { flex-wrap: wrap; }
+  .segment-grid.equal-row > .usage-card { flex: 1 1 100%; }
+}
+
 .product-card {
   position: relative;
   border: 2px solid var(--black);
@@ -265,7 +276,8 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   border: 1.5px solid var(--black);
   aspect-ratio: 16/9;
   background: var(--gray-100);
-  max-width: 560px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
@@ -323,8 +335,13 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 44px;
-  padding-bottom: 44px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+.card-cols.cols-even > .card-col-left,
+.card-cols.cols-even > .card-col-right.landing-card {
+  flex: 1 1 0;
+  max-width: none;
 }
 
 .case-card {
@@ -347,11 +364,12 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 }
 
 .case-card-name {
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gray-600);
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--black);
   margin-bottom: 16px;
 }
 
@@ -433,6 +451,23 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .case-outbound:hover { background: var(--orange); }
 
+.blog-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 16px 30px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background .15s;
+}
+
+.blog-cta:hover { background: var(--orange); color: var(--black); }
+
 .speaker-note {
   font-size: 13.5px;
   color: var(--gray-600);
@@ -448,25 +483,27 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .landing-grid {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 44px;
 }
 
 .landing-card {
-  flex: 1 1 320px;
+  flex: 1 1 340px;
   border: 2px solid var(--black);
   border-radius: var(--radius);
-  padding: 36px 32px;
+  padding: 40px 36px;
   text-decoration: none;
   color: var(--gray-900);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   cursor: pointer;
   background: var(--white);
   font: inherit;
   text-align: left;
   transition: border-color .15s, transform .15s, box-shadow .15s;
-  min-height: 190px;
+  min-height: 210px;
 }
 
 .landing-card:hover {
@@ -476,14 +513,15 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 }
 
 .landing-card h3 {
-  margin-top: 0;
-  font-size: 20px;
+  margin: 0;
+  font-size: 21px;
   white-space: nowrap;
 }
-.landing-card p { color: var(--gray-600); font-size: 14.5px; margin-bottom: 0; }
+.landing-card p { color: var(--gray-600); font-size: 15px; margin: 0; }
 
 .landing-card .metric-badge {
   display: inline-block;
+  align-self: flex-start;
   background: var(--lime);
   color: var(--black);
   font-family: 'Manrope', sans-serif;
@@ -491,7 +529,7 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   font-size: 13px;
   padding: 3px 10px;
   border-radius: 999px;
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 .back-link {
@@ -581,23 +619,17 @@ footer {
 
     <div class="product-card accent-orange" id="card-demo">
       <span class="step-badge">1</span>
-      <div class="card-cols align-center">
-        <div class="card-col-left">
-          <h2>Демо продукта</h2>
-          <ul class="points">
-            <li>как выглядит сервис</li>
-            <li>из чего состоит</li>
-            <li>какие клиенты используют</li>
-            <li>куда смотреть</li>
-          </ul>
-        </div>
-        <div class="card-col-right">
-          <div class="video-embed">
-            <iframe src="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/preview" allow="autoplay" allowfullscreen></iframe>
-          </div>
-          <p class="speaker-note">рассказывает <b>Сергей Глухов</b>, руководитель направления по работе с партнёрами</p>
-        </div>
+      <h2>Демо продукта</h2>
+      <ul class="points">
+        <li>как выглядит сервис</li>
+        <li>из чего состоит</li>
+        <li>какие клиенты используют</li>
+        <li>куда смотреть</li>
+      </ul>
+      <div class="video-embed">
+        <iframe src="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/preview" allow="autoplay" allowfullscreen></iframe>
       </div>
+      <p class="speaker-note">рассказывает <b>Сергей Глухов</b>, руководитель направления по работе с партнёрами</p>
       <div class="resource-box" style="margin-top:20px;">
         📄 Если видео не открывается — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">смотреть в Google Drive</a>
       </div>
@@ -614,7 +646,7 @@ footer {
 
     <div class="product-card accent-orange" id="card-cases">
       <span class="step-badge">3</span>
-      <div class="card-cols align-stretch">
+      <div class="card-cols align-stretch cols-even">
         <div class="card-col-left">
           <h2>Успешные кейсы клиентов</h2>
           <ul class="points">
@@ -716,7 +748,7 @@ footer {
       </div>
 
       <h2>Как использовать эти кейсы в продажах</h2>
-      <div class="segment-grid">
+      <div class="segment-grid equal-row">
         <div class="usage-card">
           <h4>Для EdTech клиентов</h4>
           <p><b>Показывайте:</b> Нетология, Skillfactory<br><b>Акцент:</b> онбординг, конверсия в оплату, квалификация дорогих лидов<br><b>Метрики:</b> +21% и +44%</p>
@@ -734,6 +766,8 @@ footer {
       <div class="resource-box" style="margin-top:32px;">
         📄 PDF-файл с кейсами — <a href="https://drive.google.com/file/d/1oHhI6zJjczw9LqMzS8hIfzTURenWMq5x/view" target="_blank">открыть</a>
       </div>
+
+      <a class="blog-cta" href="https://www.carrotquest.io/blog/" target="_blank" style="margin-top:20px;">Ещё больше кейсов в блоге Carrot quest →</a>
     </div>
 
     <!-- отдельные кейсы -->
