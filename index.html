@@ -268,6 +268,19 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 .card-row > .card-row-text { flex: 1 1 260px; }
 .card-row > .landing-card { flex: 0 1 320px; margin: 0; }
 
+.card-cols {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.card-cols > .card-col-left { flex: 1 1 280px; }
+.card-cols > .card-col-right { flex: 1 1 320px; max-width: 400px; }
+.card-cols > .landing-card.card-col-right { flex: 0 1 340px; margin: 0; }
+.card-cols h2 { margin-top: 0; }
+.card-cols .video-embed { max-width: 100%; margin-top: 0; }
+
 .speaker-note {
   font-size: 13.5px;
   color: var(--gray-600);
@@ -416,19 +429,25 @@ footer {
 
     <div class="product-card accent-orange" id="card-demo">
       <span class="step-badge">1</span>
-      <h2>Демо продукта</h2>
-      <ul class="points">
-        <li>как выглядит сервис</li>
-        <li>из чего состоит</li>
-        <li>какие клиенты используют</li>
-        <li>куда смотреть</li>
-      </ul>
-      <div class="video-embed">
-        <iframe src="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/preview" allow="autoplay" allowfullscreen></iframe>
-      </div>
-      <p class="speaker-note">рассказывает <b>Сергей Глухов</b>, руководитель направления по работе с партнёрами</p>
-      <div class="resource-box">
-        📄 Если видео не открывается — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">смотреть в Google Drive</a>
+      <div class="card-cols">
+        <div class="card-col-left">
+          <h2>Демо продукта</h2>
+          <ul class="points">
+            <li>как выглядит сервис</li>
+            <li>из чего состоит</li>
+            <li>какие клиенты используют</li>
+            <li>куда смотреть</li>
+          </ul>
+        </div>
+        <div class="card-col-right">
+          <div class="video-embed">
+            <iframe src="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <p class="speaker-note">рассказывает <b>Сергей Глухов</b>, руководитель направления по работе с партнёрами</p>
+          <div class="resource-box">
+            📄 Если видео не открывается — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">смотреть в Google Drive</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -443,15 +462,15 @@ footer {
 
     <div class="product-card accent-orange" id="card-cases">
       <span class="step-badge">3</span>
-      <h2>Успешные кейсы клиентов</h2>
-      <div class="card-row">
-        <div class="card-row-text">
+      <div class="card-cols">
+        <div class="card-col-left">
+          <h2>Успешные кейсы клиентов</h2>
           <ul class="points">
             <li>кого можно приводить в пример</li>
             <li>какую пользу принёс продукт</li>
           </ul>
         </div>
-        <button class="landing-card" data-goto="cases">
+        <button class="landing-card card-col-right" data-goto="cases">
           <h3>Смотреть кейсы →</h3>
           <p>Нетология, Skillfactory, Fitstars, Storyland, АТОЛ Онлайн, Klinkmann</p>
         </button>
