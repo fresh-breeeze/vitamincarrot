@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Kit — Carrot Quest × Vitamin.tools</title>
+<style>
+/* ВРЕМЕННЫЕ СТИЛИ — только структура и читаемость.
+   Финальный дизайн в стиле carrotquest.io добавим на втором проходе. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.5;
+  background: #fff;
+}
+
+header {
+  border-bottom: 1px solid #eaeaea;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+nav a:hover, nav a.active {
+  border-bottom: 2px solid #ffb200;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+h1 { font-size: 30px; margin-bottom: 4px; }
+h2 { font-size: 22px; margin-top: 56px; border-top: 1px solid #eaeaea; padding-top: 32px; }
+h2:first-of-type { margin-top: 32px; }
+h3 { font-size: 17px; margin-top: 28px; }
+
+.subtitle { color: #666; margin-bottom: 32px; }
+
+ul.points { margin: 8px 0 16px 20px; }
+ul.points li { margin-bottom: 4px; }
+
+.resource-box {
+  border: 1px dashed #ccc;
+  background: #fffbe8;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0 20px;
+  font-size: 14px;
+}
+
+.resource-box a { color: #0060df; }
+
+.todo {
+  display: inline-block;
+  background: #ffe1e1;
+  color: #b00000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.segment-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.segment-card {
+  flex: 1 1 200px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.segment-card h4 { margin: 0 0 8px; }
+
+.landing-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.landing-card {
+  flex: 1 1 250px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 24px;
+  text-decoration: none;
+  color: #1a1a1a;
+  display: block;
+  cursor: pointer;
+  background: none;
+  font: inherit;
+  text-align: left;
+}
+
+.landing-card:hover { border-color: #ffb200; }
+.landing-card h3 { margin-top: 0; }
+.landing-card p { color: #666; font-size: 14px; margin-bottom: 0; }
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  padding: 24px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" data-goto="home">🥕 Carrot Quest × Vitamin.tools</div>
+  <nav>
+    <a data-goto="home">Главная</a>
+    <a data-goto="product">О продукте</a>
+    <a data-goto="vitamin">Vitamin.tools + Carrot Quest</a>
+    <a data-goto="hub">Материалы хаба</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== ГЛАВНАЯ ===== -->
+  <section class="view active" id="view-home">
+    <h1>Sales Kit для команды продаж</h1>
+    <p class="subtitle">Всё, что нужно команде Vitamin.tools, чтобы уверенно продавать Carrot Quest клиентам.</p>
+
+    <div class="landing-grid">
+      <button class="landing-card" data-goto="product">
+        <h3>О продукте Carrot Quest</h3>
+        <p>Демо, кейсы клиентов, презентация продукта и подход к продаже в разных сегментах.</p>
+      </button>
+      <button class="landing-card" data-goto="vitamin">
+        <h3>Vitamin.tools + Carrot Quest</h3>
+        <p>Почему эта связка работает, бонусы для команды продаж, отработка возражений.</p>
+      </button>
+      <button class="landing-card" data-goto="hub">
+        <h3>Материалы партнёрского хаба</h3>
+        <p>Актуальная информация, доступная только партнёрам.</p>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== О ПРОДУКТЕ ===== -->
+  <section class="view" id="view-product">
+    <span class="back-link" data-goto="home">← на главную</span>
+    <h1>О продукте Carrot Quest</h1>
+    <p class="subtitle">Всё, что нужно знать о продукте, чтобы уверенно рассказывать о нём клиентам.</p>
+
+    <h2>Демо продукта</h2>
+    <ul class="points">
+      <li>как выглядит сервис</li>
+      <li>из чего состоит</li>
+      <li>какие клиенты используют</li>
+      <li>куда смотреть</li>
+    </ul>
+    <div class="resource-box">
+      📄 Демо продукта — <a href="#">ССЫЛКА (Google Docs)</a><span class="todo">TODO: ссылка</span>
+    </div>
+
+    <h2>Успешные кейсы клиентов</h2>
+    <ul class="points">
+      <li>кого можно приводить в пример</li>
+      <li>какую пользу принёс продукт</li>
+    </ul>
+    <div class="resource-box">
+      📄 Carrot Quest_Кейсы по сегментам.pdf — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
+    </div>
+
+    <h2>Презентация о Carrot Quest</h2>
+    <p>Всё о продукте в удобной форме — презентацию можно показывать клиентам напрямую.</p>
+    <div class="resource-box">
+      🖥 Презентация (Miro) — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
+    </div>
+
+    <h2>Как продавать продукт конкретным сегментам</h2>
+    <p>Подход к продаже отличается по сегментам — ниже материалы под каждый.</p>
+    <div class="segment-grid">
+      <div class="segment-card">
+        <h4>B2B e-com</h4>
+        <div class="resource-box"><a href="#">ССЫЛКА</a><span class="todo">TODO</span></div>
+      </div>
+      <div class="segment-card">
+        <h4>SaaS</h4>
+        <div class="resource-box"><a href="#">ССЫЛКА</a><span class="todo">TODO</span></div>
+      </div>
+      <div class="segment-card">
+        <h4>EdTech</h4>
+        <div class="resource-box"><a href="#">ССЫЛКА</a><span class="todo">TODO</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VITAMIN.TOOLS + CARROT QUEST ===== -->
+  <section class="view" id="view-vitamin">
+    <span class="back-link" data-goto="home">← на главную</span>
+    <h1>Vitamin.tools + Carrot Quest</h1>
+    <p class="subtitle">Почему эта связка работает и что это значит для команды продаж.</p>
+
+    <h2>Почему Vitamin.tools + Carrot Quest</h2>
+    <ul class="points">
+      <li>совместный оффер (ссылка из ноушн / one page)</li>
+      <li>как продукты дополняют друг друга</li>
+      <li>ценность связки для клиента</li>
+      <li>готовая формулировка для разговора с клиентом</li>
+    </ul>
+    <div class="resource-box">
+      📄 Совместный оффер — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
+    </div>
+
+    <h2>Бонусы для команды продаж</h2>
+    <p>Условия получения бонуса от Carrot Quest.</p>
+    <div class="resource-box">
+      💰 Условия бонуса — <span class="todo">TODO: считает Паша</span>
+    </div>
+
+    <h2>Отработка возражений</h2>
+    <p style="color:#999;">Раздел в разработке — заполним, когда соберём частые вопросы и возражения клиентов.</p>
+    <div class="resource-box">
+      <span class="todo">TODO: контент раздела</span>
+    </div>
+  </section>
+
+  <!-- ===== МАТЕРИАЛЫ ХАБА ===== -->
+  <section class="view" id="view-hub">
+    <span class="back-link" data-goto="home">← на главную</span>
+    <h1>Материалы партнёрского хаба</h1>
+    <p class="subtitle">Актуальная информация, доступная только партнёрам.</p>
+
+    <h2>Преза хаба</h2>
+    <p>Описание: здесь актуальная информация только для партнёров.</p>
+    <div class="resource-box">
+      🖥 Преза хаба (Miro) — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>Внутренний материал для команды продаж Vitamin.tools · Carrot Quest</footer>
+
+<script>
+// Переключение "экранов" — один файл, ощущение отдельных страниц.
+// Поддержка прямых ссылок через #hash (например, index.html#vitamin).
+
+function goto(view) {
+  document.querySelectorAll('.view').forEach(function(el) {
+    el.classList.toggle('active', el.id === 'view-' + view);
+  });
+  document.querySelectorAll('nav a').forEach(function(el) {
+    el.classList.toggle('active', el.dataset.goto === view);
+  });
+  window.location.hash = view === 'home' ? '' : view;
+  window.scrollTo(0, 0);
+}
+
+document.querySelectorAll('[data-goto]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    goto(el.dataset.goto);
+  });
+});
+
+// открыть нужный экран, если пришли по ссылке с хэшем
+var initial = window.location.hash.replace('#', '');
+if (['product', 'vitamin', 'hub'].includes(initial)) {
+  goto(initial);
+}
+</script>
+
+</body>
+</html>
