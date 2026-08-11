@@ -336,8 +336,11 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   flex: 1 1 0;
   max-width: none;
 }
-.card-cols.align-stretch > .landing-card.card-col-right {
-  padding-top: 0;
+.card-cols.cols-even > .card-col-left {
+  padding-top: 30px;
+}
+.card-cols.cols-even > .landing-card.card-col-right {
+  padding: 30px 32px;
 }
 
 .case-card {
@@ -642,7 +645,7 @@ footer {
 
     <div class="product-card accent-orange" id="card-cases">
       <span class="step-badge">3</span>
-      <div class="card-cols align-stretch cols-even">
+      <div class="card-cols cols-even">
         <div class="card-col-left">
           <h2>Успешные кейсы клиентов</h2>
           <ul class="points">
