@@ -126,8 +126,8 @@ h4 { font-size: 15px; }
 
 .subtitle { color: var(--gray-600); font-size: 16px; margin-bottom: 32px; }
 
-ul.points, ol.points { margin: 8px 0 16px 20px; padding: 0; }
-ul.points li, ol.points li { margin-bottom: 6px; }
+ul.points, ol.points { margin: 6px 0 12px 20px; padding: 0; }
+ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .resource-box {
   border: 1.5px solid var(--black);
@@ -228,9 +228,45 @@ ul.points li, ol.points li { margin-bottom: 6px; }
   border: 1.5px solid var(--black);
   aspect-ratio: 16/9;
   background: var(--gray-100);
+  max-width: 480px;
 }
 
 .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.product-card { scroll-margin-top: 90px; }
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 8px;
+}
+
+.section-nav a {
+  color: var(--black);
+  background: var(--gray-100);
+  border: 1.5px solid var(--black);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+
+.section-nav a:hover { background: var(--orange); }
+
+.card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card-row > .card-row-text { flex: 1 1 260px; }
+.card-row > .landing-card { flex: 0 1 320px; margin: 0; }
 
 .speaker-note {
   font-size: 13.5px;
@@ -371,7 +407,14 @@ footer {
     <h1>О продукте Carrot quest</h1>
     <p class="subtitle">Всё, что нужно знать о продукте, чтобы уверенно рассказывать о нём клиентам.</p>
 
-    <div class="product-card accent-orange">
+    <nav class="section-nav">
+      <a data-scroll-to="card-demo">Демо продукта</a>
+      <a data-scroll-to="card-presentation">Презентация</a>
+      <a data-scroll-to="card-cases">Успешные кейсы</a>
+      <a data-scroll-to="card-segments">Сегменты</a>
+    </nav>
+
+    <div class="product-card accent-orange" id="card-demo">
       <span class="step-badge">1</span>
       <h2>Демо продукта</h2>
       <ul class="points">
@@ -389,7 +432,7 @@ footer {
       </div>
     </div>
 
-    <div class="product-card accent-lime">
+    <div class="product-card accent-lime" id="card-presentation">
       <span class="step-badge">2</span>
       <h2>Презентация о Carrot quest</h2>
       <p>Всё о продукте в удобной форме — презентацию можно показывать клиентам напрямую.</p>
@@ -398,20 +441,24 @@ footer {
       </div>
     </div>
 
-    <div class="product-card accent-orange">
+    <div class="product-card accent-orange" id="card-cases">
       <span class="step-badge">3</span>
       <h2>Успешные кейсы клиентов</h2>
-      <ul class="points">
-        <li>кого можно приводить в пример</li>
-        <li>какую пользу принёс продукт</li>
-      </ul>
-      <button class="landing-card" data-goto="cases" style="max-width:360px; min-height:auto;">
-        <h3>Смотреть кейсы →</h3>
-        <p>Нетология, Skillfactory, Fitstars, Storyland, АТОЛ Онлайн, Klinkmann — с цифрами и деталями решения</p>
-      </button>
+      <div class="card-row">
+        <div class="card-row-text">
+          <ul class="points">
+            <li>кого можно приводить в пример</li>
+            <li>какую пользу принёс продукт</li>
+          </ul>
+        </div>
+        <button class="landing-card" data-goto="cases">
+          <h3>Смотреть кейсы →</h3>
+          <p>Нетология, Skillfactory, Fitstars, Storyland, АТОЛ Онлайн, Klinkmann</p>
+        </button>
+      </div>
     </div>
 
-    <div class="product-card accent-lime">
+    <div class="product-card accent-lime" id="card-segments">
       <span class="step-badge">4</span>
       <h2>Как продавать продукт конкретным сегментам</h2>
       <p>Подход к продаже отличается по сегментам — ниже материалы под каждый.</p>
@@ -718,6 +765,15 @@ function goto(view) {
 document.querySelectorAll('[data-goto]').forEach(function(el) {
   el.addEventListener('click', function() {
     goto(el.dataset.goto);
+  });
+});
+
+// плавный скролл к подразделу внутри текущего экрана (без смены #hash)
+document.querySelectorAll('[data-scroll-to]').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById(el.dataset.scrollTo);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
