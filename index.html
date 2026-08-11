@@ -171,11 +171,48 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   flex: 1 1 200px;
   border: 1.5px solid var(--black);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 26px 20px;
   background: var(--white);
+  text-align: center;
 }
 
-.segment-card h4 { margin: 0 0 10px; white-space: nowrap; }
+.segment-card h4 { margin: 0 0 16px; font-size: 19px; white-space: normal; }
+
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid var(--black);
+  border-radius: 999px;
+  padding: 9px 22px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--black);
+  transition: background .15s;
+}
+
+.pill-button:hover { background: var(--orange); }
+
+.usage-card {
+  position: relative;
+  border: 2px solid var(--black);
+  border-radius: var(--radius);
+  padding: 26px 24px 22px;
+  overflow: hidden;
+}
+
+.usage-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: var(--stripe, var(--lime));
+}
+
+.usage-card h4 { font-size: 17px; margin: 6px 0 12px; text-align: left; white-space: normal; }
+.usage-card p { font-size: 14px !important; color: var(--gray-600); line-height: 1.6; text-align: left; }
+.usage-card b { color: var(--black); }
 
 .product-card {
   position: relative;
@@ -195,9 +232,9 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   background: var(--stripe, var(--orange));
 }
 
-.product-card.accent-lime { --stripe: var(--lime); }
-.product-card.accent-orange { --stripe: var(--orange); }
-.product-card.accent-black { --stripe: var(--black); }
+.accent-lime { --stripe: var(--lime); }
+.accent-orange { --stripe: var(--orange); }
+.accent-black { --stripe: var(--black); }
 
 .product-card .step-badge {
   display: inline-flex;
@@ -228,7 +265,7 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   border: 1.5px solid var(--black);
   aspect-ratio: 16/9;
   background: var(--gray-100);
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
@@ -276,10 +313,125 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 }
 
 .card-cols > .card-col-left { flex: 1 1 280px; }
-.card-cols > .card-col-right { flex: 1 1 320px; max-width: 400px; }
+.card-cols > .card-col-right { flex: 1 1 320px; max-width: 460px; }
 .card-cols > .landing-card.card-col-right { flex: 0 1 340px; margin: 0; }
 .card-cols h2 { margin-top: 0; }
 .card-cols .video-embed { max-width: 100%; margin-top: 0; }
+.card-cols.align-center { align-items: center; }
+.card-cols.align-stretch { align-items: stretch; }
+.card-cols.align-stretch > .landing-card.card-col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+
+.case-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  border: 2px solid var(--black);
+  border-radius: 16px;
+  background: var(--white);
+  padding: 26px 24px;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
+}
+
+.case-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 0 var(--black);
+}
+
+.case-card-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  margin-bottom: 16px;
+}
+
+.case-card-metric {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  background: var(--lime);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.case-card-headline {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.case-card-desc {
+  font-size: 13.5px;
+  color: var(--gray-600);
+  margin: 0 0 20px;
+}
+
+.case-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid var(--black);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.case-card:hover .case-card-cta { background: var(--orange); }
+
+.case-page {
+  position: relative;
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  padding: 36px 32px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.case-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--stripe, var(--orange));
+}
+
+.case-page h2 {
+  margin-top: 4px;
+  padding-top: 0;
+  border-top: none;
+  font-size: 26px;
+}
+
+.case-outbound {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--black);
+  margin-top: 10px;
+}
+
+.case-outbound:hover { background: var(--orange); }
 
 .speaker-note {
   font-size: 13.5px;
@@ -429,7 +581,7 @@ footer {
 
     <div class="product-card accent-orange" id="card-demo">
       <span class="step-badge">1</span>
-      <div class="card-cols">
+      <div class="card-cols align-center">
         <div class="card-col-left">
           <h2>Демо продукта</h2>
           <ul class="points">
@@ -444,10 +596,10 @@ footer {
             <iframe src="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/preview" allow="autoplay" allowfullscreen></iframe>
           </div>
           <p class="speaker-note">рассказывает <b>Сергей Глухов</b>, руководитель направления по работе с партнёрами</p>
-          <div class="resource-box">
-            📄 Если видео не открывается — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">смотреть в Google Drive</a>
-          </div>
         </div>
+      </div>
+      <div class="resource-box" style="margin-top:20px;">
+        📄 Если видео не открывается — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">смотреть в Google Drive</a>
       </div>
     </div>
 
@@ -462,7 +614,7 @@ footer {
 
     <div class="product-card accent-orange" id="card-cases">
       <span class="step-badge">3</span>
-      <div class="card-cols">
+      <div class="card-cols align-stretch">
         <div class="card-col-left">
           <h2>Успешные кейсы клиентов</h2>
           <ul class="points">
@@ -484,15 +636,15 @@ footer {
       <div class="segment-grid">
         <div class="segment-card">
           <h4>B2B e-com</h4>
-          <div class="resource-box"><a href="https://docs.google.com/presentation/d/1S09OVGJJnFUcQszWlOB3uvEhAJqLhsuo-_9ouxhHSIA/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+          <a class="pill-button" href="https://docs.google.com/presentation/d/1S09OVGJJnFUcQszWlOB3uvEhAJqLhsuo-_9ouxhHSIA/edit?slide=id.p1#slide=id.p1" target="_blank">открыть →</a>
         </div>
         <div class="segment-card">
           <h4>SaaS</h4>
-          <div class="resource-box"><a href="https://docs.google.com/presentation/d/1_IIqAiSp4HvjSncSbfYzjtyAannH3jsEq9ikSQnSitc/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+          <a class="pill-button" href="https://docs.google.com/presentation/d/1_IIqAiSp4HvjSncSbfYzjtyAannH3jsEq9ikSQnSitc/edit?slide=id.p1#slide=id.p1" target="_blank">открыть →</a>
         </div>
         <div class="segment-card">
           <h4>EdTech</h4>
-          <div class="resource-box"><a href="https://docs.google.com/presentation/d/1CQgz-M_AoWKT_V230gUVYvDwTO1pbbCNEUjmENR2pyo/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+          <a class="pill-button" href="https://docs.google.com/presentation/d/1CQgz-M_AoWKT_V230gUVYvDwTO1pbbCNEUjmENR2pyo/edit?slide=id.p1#slide=id.p1" target="_blank">открыть →</a>
         </div>
       </div>
     </div>
@@ -511,35 +663,71 @@ footer {
 
       <h2 style="margin-top:24px;">EdTech: онбординг и конверсия в оплату</h2>
       <div class="segment-grid">
-        <button class="landing-card" data-case="netology"><h3>🎯 Нетология</h3><p>Триггерные цепочки для роста конверсии — +21%</p></button>
-        <button class="landing-card" data-case="skillfactory"><h3>🚀 Skillfactory</h3><p>Квалификация лидов для дорогих курсов — +44%</p></button>
+        <button class="case-card" data-case="netology">
+          <div class="case-card-name">Нетология</div>
+          <div class="case-card-metric">+21%</div>
+          <div class="case-card-headline">к конверсии в оплату курсов</div>
+          <p class="case-card-desc">Триггерные цепочки закрывают путь от регистрации до оплаты.</p>
+          <span class="case-card-cta">Смотреть кейс →</span>
+        </button>
+        <button class="case-card" data-case="skillfactory">
+          <div class="case-card-name">Skillfactory</div>
+          <div class="case-card-metric">+44%</div>
+          <div class="case-card-headline">к конверсии в покупку</div>
+          <p class="case-card-desc">Умный лид-бот и скоринг передают в продажи только горячих лидов.</p>
+          <span class="case-card-cta">Смотреть кейс →</span>
+        </button>
       </div>
 
       <h2>SaaS: активация и рост LTV</h2>
       <div class="segment-grid">
-        <button class="landing-card" data-case="fitstars"><h3>💪 Fitstars</h3><p>Активация пользователей в триале — +11%</p></button>
-        <button class="landing-card" data-case="storyland"><h3>📚 Storyland</h3><p>Монетизация freemium-модели — 100 000 ₽ доп. дохода</p></button>
+        <button class="case-card" data-case="fitstars">
+          <div class="case-card-name">Fitstars</div>
+          <div class="case-card-metric">+11%</div>
+          <div class="case-card-headline">к конверсии в оплату</div>
+          <p class="case-card-desc">Онбординг-цепочки и триггеры увеличивают активацию в триале.</p>
+          <span class="case-card-cta">Смотреть кейс →</span>
+        </button>
+        <button class="case-card" data-case="storyland">
+          <div class="case-card-name">Storyland</div>
+          <div class="case-card-metric">100 000 ₽</div>
+          <div class="case-card-headline">доп. дохода без трафика</div>
+          <p class="case-card-desc">Умные ограничения переводят Free-пользователей в Premium.</p>
+          <span class="case-card-cta">Смотреть кейс →</span>
+        </button>
       </div>
 
       <h2>B2B E-commerce: конверсия в заказ и повторные продажи</h2>
       <div class="segment-grid">
-        <button class="landing-card" data-case="atol"><h3>🏪 АТОЛ Онлайн</h3><p>Персонализация B2B-продаж — +30%</p></button>
-        <button class="landing-card" data-case="klinkmann"><h3>⚙️ Klinkmann</h3><p>Техническая поддержка продаж — +26%</p></button>
+        <button class="case-card" data-case="atol">
+          <div class="case-card-name">АТОЛ Онлайн</div>
+          <div class="case-card-metric">+30%</div>
+          <div class="case-card-headline">к продажам с сайта</div>
+          <p class="case-card-desc">Консультационные боты помогают выбрать оборудование.</p>
+          <span class="case-card-cta">Смотреть кейс →</span>
+        </button>
+        <button class="case-card" data-case="klinkmann">
+          <div class="case-card-name">Klinkmann</div>
+          <div class="case-card-metric">+26%</div>
+          <div class="case-card-headline">к конверсии в заказ</div>
+          <p class="case-card-desc">Техническая экспертиза сопровождает клиента по каталогу.</p>
+          <span class="case-card-cta">Смотреть кейс →</span>
+        </button>
       </div>
 
       <h2>Как использовать эти кейсы в продажах</h2>
       <div class="segment-grid">
-        <div class="segment-card">
+        <div class="usage-card">
           <h4>Для EdTech клиентов</h4>
-          <p style="font-size:14px;">Показывайте: Нетология, Skillfactory<br>Акцент: онбординг, конверсия в оплату, квалификация дорогих лидов<br>Метрики: +21% и +44%</p>
+          <p><b>Показывайте:</b> Нетология, Skillfactory<br><b>Акцент:</b> онбординг, конверсия в оплату, квалификация дорогих лидов<br><b>Метрики:</b> +21% и +44%</p>
         </div>
-        <div class="segment-card">
+        <div class="usage-card">
           <h4>Для SaaS клиентов</h4>
-          <p style="font-size:14px;">Показывайте: Fitstars, Storyland<br>Акцент: активация, рост LTV, монетизация freemium<br>Метрики: +11%, 100k ₽ без трафика</p>
+          <p><b>Показывайте:</b> Fitstars, Storyland<br><b>Акцент:</b> активация, рост LTV, монетизация freemium<br><b>Метрики:</b> +11%, 100k ₽ без трафика</p>
         </div>
-        <div class="segment-card">
+        <div class="usage-card">
           <h4>Для B2B E-commerce</h4>
-          <p style="font-size:14px;">Показывайте: АТОЛ Онлайн, Klinkmann<br>Акцент: сложные B2B продажи, техподдержка, персонализация<br>Метрики: +30% и +26%</p>
+          <p><b>Показывайте:</b> АТОЛ Онлайн, Klinkmann<br><b>Акцент:</b> сложные B2B продажи, техподдержка, персонализация<br><b>Метрики:</b> +30% и +26%</p>
         </div>
       </div>
 
@@ -551,170 +739,188 @@ footer {
     <!-- отдельные кейсы -->
     <div class="case-detail" id="case-netology" style="display:none;">
       <span class="back-link" data-back-to-cases="1">← ко всем кейсам</span>
-      <h2 style="margin-top:16px;">🎯 Нетология: триггерные цепочки для роста конверсии</h2>
-      <h3>Клиент</h3>
-      <p>Нетология — одна из крупнейших онлайн-школ в России с более чем 100 000 студентов.</p>
-      <h3>Вызов</h3>
-      <p>После регистрации на курс только 15% пользователей доходили до оплаты.</p>
-      <ul class="points">
-        <li>пользователи «терялись» между регистрацией и покупкой</li>
-        <li>отсутствие персонализированной коммуникации</li>
-        <li>нет ответов на частые вопросы в нужный момент</li>
-        <li>длинный путь от интереса к покупке</li>
-      </ul>
-      <h3>Решение Carrot quest</h3>
-      <ol class="points">
-        <li>анализ поведения — выявили ключевые точки оттока в воронке</li>
-        <li>триггерные цепочки — автоматические сообщения на основе действий пользователя</li>
-        <li>персонализация — сегментация аудитории по интересам и поведению</li>
-        <li>FAQ-боты — автоматические ответы на частые вопросы о курсах</li>
-      </ol>
-      <h3>Детали реализации</h3>
-      <ul class="points">
-        <li>поп-ап через 30 секунд после регистрации с приветствием</li>
-        <li>email-цепочка из 5 писем с полезным контентом</li>
-        <li>чат-бот для ответов на вопросы о программе и оплате</li>
-        <li>персональные предложения на основе просмотренных курсов</li>
-      </ul>
-      <h3>Результат</h3>
-      <p class="result-headline">+21% к конверсии в оплату курсов</p>
-      <p>Время до покупки сократилось на 35%. Обращения в поддержку снизились на 40%. NPS вырос с 7.2 до 8.1.</p>
-      <p><a href="https://www.carrotquest.io/blog/case-netology/" target="_blank">Подробнее на carrotquest.io</a></p>
+      <div class="case-page accent-orange">
+        <span class="eyebrow">Нетология · EdTech</span>
+        <h2>Триггерные цепочки для роста конверсии</h2>
+        <h3>Клиент</h3>
+        <p>Нетология — одна из крупнейших онлайн-школ в России с более чем 100 000 студентов.</p>
+        <h3>Вызов</h3>
+        <p>После регистрации на курс только 15% пользователей доходили до оплаты.</p>
+        <ul class="points">
+          <li>пользователи «терялись» между регистрацией и покупкой</li>
+          <li>отсутствие персонализированной коммуникации</li>
+          <li>нет ответов на частые вопросы в нужный момент</li>
+          <li>длинный путь от интереса к покупке</li>
+        </ul>
+        <h3>Решение Carrot quest</h3>
+        <ol class="points">
+          <li>анализ поведения — выявили ключевые точки оттока в воронке</li>
+          <li>триггерные цепочки — автоматические сообщения на основе действий пользователя</li>
+          <li>персонализация — сегментация аудитории по интересам и поведению</li>
+          <li>FAQ-боты — автоматические ответы на частые вопросы о курсах</li>
+        </ol>
+        <h3>Детали реализации</h3>
+        <ul class="points">
+          <li>поп-ап через 30 секунд после регистрации с приветствием</li>
+          <li>email-цепочка из 5 писем с полезным контентом</li>
+          <li>чат-бот для ответов на вопросы о программе и оплате</li>
+          <li>персональные предложения на основе просмотренных курсов</li>
+        </ul>
+        <h3>Результат</h3>
+        <p class="result-headline">+21% к конверсии в оплату курсов</p>
+        <p>Время до покупки сократилось на 35%. Обращения в поддержку снизились на 40%. NPS вырос с 7.2 до 8.1.</p>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/case-netology/" target="_blank">Подробнее на carrotquest.io →</a>
+      </div>
     </div>
 
     <div class="case-detail" id="case-skillfactory" style="display:none;">
       <span class="back-link" data-back-to-cases="1">← ко всем кейсам</span>
-      <h2 style="margin-top:16px;">🚀 Skillfactory: квалификация лидов для дорогих курсов</h2>
-      <h3>Клиент</h3>
-      <p>Skillfactory — онлайн-школа IT-профессий, средний чек курса 150 000 рублей.</p>
-      <h3>Вызов</h3>
-      <p>При высокой стоимости курсов (100–200k рублей) критически важно правильно квалифицировать лидов, передавать в отдел продаж только горячих клиентов, давать менеджерам максимум контекста и сокращать время на «холодные» звонки.</p>
-      <h3>Решение Carrot quest</h3>
-      <ol class="points">
-        <li>умный лид-бот — квалификация по 8 критериям (опыт, бюджет, цели)</li>
-        <li>скоринг лидов — автоматическая оценка «температуры» лида</li>
-        <li>CRM-интеграция — передача данных в Битрикс24 с полным контекстом</li>
-        <li>сегментация — разные сценарии для разных типов клиентов</li>
-      </ol>
-      <h3>Детали реализации</h3>
-      <ul class="points">
-        <li>интерактивный квиз из 8 вопросов о целях и опыте</li>
-        <li>автоматическая оценка готовности к покупке (1–10 баллов)</li>
-        <li>мгновенная передача горячих лидов (8+ баллов) менеджеру</li>
-        <li>цепочки дозревания для «теплых» лидов (5–7 баллов)</li>
-      </ul>
-      <h3>Результат</h3>
-      <p class="result-headline">+44% к конверсии в покупку и рост среднего чека</p>
-      <p>Время менеджера на лида сократилось в 2.5 раза. Конверсия звонка в продажу выросла с 12% до 18%. Средний чек вырос на 15%.</p>
-      <p><a href="https://www.carrotquest.io/blog/case-skillfactory/" target="_blank">Подробнее на carrotquest.io</a></p>
+      <div class="case-page accent-lime">
+        <span class="eyebrow">Skillfactory · EdTech</span>
+        <h2>Квалификация лидов для дорогих курсов</h2>
+        <h3>Клиент</h3>
+        <p>Skillfactory — онлайн-школа IT-профессий, средний чек курса 150 000 рублей.</p>
+        <h3>Вызов</h3>
+        <p>При высокой стоимости курсов (100–200k рублей) критически важно правильно квалифицировать лидов, передавать в отдел продаж только горячих клиентов, давать менеджерам максимум контекста и сокращать время на «холодные» звонки.</p>
+        <h3>Решение Carrot quest</h3>
+        <ol class="points">
+          <li>умный лид-бот — квалификация по 8 критериям (опыт, бюджет, цели)</li>
+          <li>скоринг лидов — автоматическая оценка «температуры» лида</li>
+          <li>CRM-интеграция — передача данных в Битрикс24 с полным контекстом</li>
+          <li>сегментация — разные сценарии для разных типов клиентов</li>
+        </ol>
+        <h3>Детали реализации</h3>
+        <ul class="points">
+          <li>интерактивный квиз из 8 вопросов о целях и опыте</li>
+          <li>автоматическая оценка готовности к покупке (1–10 баллов)</li>
+          <li>мгновенная передача горячих лидов (8+ баллов) менеджеру</li>
+          <li>цепочки дозревания для «теплых» лидов (5–7 баллов)</li>
+        </ul>
+        <h3>Результат</h3>
+        <p class="result-headline">+44% к конверсии в покупку и рост среднего чека</p>
+        <p>Время менеджера на лида сократилось в 2.5 раза. Конверсия звонка в продажу выросла с 12% до 18%. Средний чек вырос на 15%.</p>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/case-skillfactory/" target="_blank">Подробнее на carrotquest.io →</a>
+      </div>
     </div>
 
     <div class="case-detail" id="case-fitstars" style="display:none;">
       <span class="back-link" data-back-to-cases="1">← ко всем кейсам</span>
-      <h2 style="margin-top:16px;">💪 Fitstars: активация пользователей в триале</h2>
-      <h3>Клиент</h3>
-      <p>Fitstars — платформа онлайн-тренировок с 500 000+ пользователей.</p>
-      <h3>Вызов</h3>
-      <p>Классическая проблема SaaS — высокие регистрации, низкая конверсия: 70% пользователей регистрировались в триале, только 8% переходили на платную подписку. Пользователи не понимали ценность продукта, отсутствовал онбординг и активация.</p>
-      <h3>Решение Carrot quest</h3>
-      <ol class="points">
-        <li>онбординг-последовательность — пошаговое знакомство с платформой</li>
-        <li>активационные триггеры — мотивация к первой тренировке</li>
-        <li>персональные рекомендации — подбор тренировок по целям</li>
-        <li>retention-сценарии — возврат неактивных пользователей</li>
-      </ol>
-      <h3>Детали реализации</h3>
-      <ul class="points">
-        <li>приветственная серия из 3 поп-апов в первые 24 часа</li>
-        <li>персональный подбор первой тренировки через квиз</li>
-        <li>напоминания о незавершенных тренировках</li>
-        <li>специальные предложения в конце триала со скидкой 30%</li>
-      </ul>
-      <h3>Результат</h3>
-      <p class="result-headline">+11% к конверсии в оплату и рост удержания пользователей</p>
-      <p>Активные пользователи в триале выросли с 35% до 52%. Время до первой тренировки сократилось с 3.2 до 1.8 дней. Retention на 30-й день вырос с 25% до 31%.</p>
-      <p><a href="https://www.carrotquest.io/blog/case-fitstars/" target="_blank">Подробнее на carrotquest.io</a></p>
+      <div class="case-page accent-orange">
+        <span class="eyebrow">Fitstars · SaaS</span>
+        <h2>Активация пользователей в триале</h2>
+        <h3>Клиент</h3>
+        <p>Fitstars — платформа онлайн-тренировок с 500 000+ пользователей.</p>
+        <h3>Вызов</h3>
+        <p>Классическая проблема SaaS — высокие регистрации, низкая конверсия: 70% пользователей регистрировались в триале, только 8% переходили на платную подписку. Пользователи не понимали ценность продукта, отсутствовал онбординг и активация.</p>
+        <h3>Решение Carrot quest</h3>
+        <ol class="points">
+          <li>онбординг-последовательность — пошаговое знакомство с платформой</li>
+          <li>активационные триггеры — мотивация к первой тренировке</li>
+          <li>персональные рекомендации — подбор тренировок по целям</li>
+          <li>retention-сценарии — возврат неактивных пользователей</li>
+        </ol>
+        <h3>Детали реализации</h3>
+        <ul class="points">
+          <li>приветственная серия из 3 поп-апов в первые 24 часа</li>
+          <li>персональный подбор первой тренировки через квиз</li>
+          <li>напоминания о незавершенных тренировках</li>
+          <li>специальные предложения в конце триала со скидкой 30%</li>
+        </ul>
+        <h3>Результат</h3>
+        <p class="result-headline">+11% к конверсии в оплату и рост удержания пользователей</p>
+        <p>Активные пользователи в триале выросли с 35% до 52%. Время до первой тренировки сократилось с 3.2 до 1.8 дней. Retention на 30-й день вырос с 25% до 31%.</p>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/case-fitstars/" target="_blank">Подробнее на carrotquest.io →</a>
+      </div>
     </div>
 
     <div class="case-detail" id="case-storyland" style="display:none;">
       <span class="back-link" data-back-to-cases="1">← ко всем кейсам</span>
-      <h2 style="margin-top:16px;">📚 Storyland: монетизация freemium-модели</h2>
-      <h3>Клиент</h3>
-      <p>Storyland — сервис для изучения английского языка через истории.</p>
-      <h3>Вызов</h3>
-      <p>Пользователи активно использовали бесплатный функционал, но не переходили на Premium: 85% оставались на Free-тарифе, воронка монетизации была неэффективной, пользователи не понимали ценность Premium-функций, не было триггеров для апгрейда.</p>
-      <h3>Решение Carrot quest</h3>
-      <ol class="points">
-        <li>умные ограничения — показ ценности Premium в нужный момент</li>
-        <li>триггерные предложения — апгрейд после достижения целей</li>
-        <li>социальные доказательства — отзывы и успехи других пользователей</li>
-        <li>персонализация — разные предложения для разных сегментов</li>
-      </ol>
-      <h3>Детали реализации</h3>
-      <ul class="points">
-        <li>поп-ап с предложением Premium после прохождения 5 уроков</li>
-        <li>показ статистики прогресса с мотивацией к продолжению</li>
-        <li>ограниченные предложения со скидкой для активных пользователей</li>
-        <li>A/B-тестирование разных сценариев монетизации</li>
-      </ul>
-      <h3>Результат</h3>
-      <p class="result-headline">100 000 рублей дополнительного дохода без вложений в трафик</p>
-      <p>Конверсия Free → Premium выросла с 3.2% до 7.8%. ARPU вырос на 45%. Время жизни пользователя увеличилось на 60%.</p>
-      <p><a href="https://www.carrotquest.io/blog/storyland-case/" target="_blank">Подробнее на carrotquest.io</a></p>
+      <div class="case-page accent-lime">
+        <span class="eyebrow">Storyland · SaaS</span>
+        <h2>Монетизация freemium-модели</h2>
+        <h3>Клиент</h3>
+        <p>Storyland — сервис для изучения английского языка через истории.</p>
+        <h3>Вызов</h3>
+        <p>Пользователи активно использовали бесплатный функционал, но не переходили на Premium: 85% оставались на Free-тарифе, воронка монетизации была неэффективной, пользователи не понимали ценность Premium-функций, не было триггеров для апгрейда.</p>
+        <h3>Решение Carrot quest</h3>
+        <ol class="points">
+          <li>умные ограничения — показ ценности Premium в нужный момент</li>
+          <li>триггерные предложения — апгрейд после достижения целей</li>
+          <li>социальные доказательства — отзывы и успехи других пользователей</li>
+          <li>персонализация — разные предложения для разных сегментов</li>
+        </ol>
+        <h3>Детали реализации</h3>
+        <ul class="points">
+          <li>поп-ап с предложением Premium после прохождения 5 уроков</li>
+          <li>показ статистики прогресса с мотивацией к продолжению</li>
+          <li>ограниченные предложения со скидкой для активных пользователей</li>
+          <li>A/B-тестирование разных сценариев монетизации</li>
+        </ul>
+        <h3>Результат</h3>
+        <p class="result-headline">100 000 рублей дополнительного дохода без вложений в трафик</p>
+        <p>Конверсия Free → Premium выросла с 3.2% до 7.8%. ARPU вырос на 45%. Время жизни пользователя увеличилось на 60%.</p>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/storyland-case/" target="_blank">Подробнее на carrotquest.io →</a>
+      </div>
     </div>
 
     <div class="case-detail" id="case-atol" style="display:none;">
       <span class="back-link" data-back-to-cases="1">← ко всем кейсам</span>
-      <h2 style="margin-top:16px;">🏪 АТОЛ Онлайн: персонализация B2B-продаж</h2>
-      <h3>Клиент</h3>
-      <p>АТОЛ Онлайн — лидер рынка онлайн-касс с оборотом 2+ млрд рублей.</p>
-      <h3>Вызов</h3>
-      <p>Сложный B2B-продукт с длинным циклом сделки: клиентам трудно выбрать подходящую кассу из 50+ моделей, много технических вопросов и требований, путь от интереса к покупке занимал 2–3 месяца, конверсия сайта была менее 1%.</p>
-      <h3>Решение Carrot quest</h3>
-      <ol class="points">
-        <li>консультационные боты — помощь в выборе оборудования</li>
-        <li>квалификация по бизнесу — сегментация по типу деятельности</li>
-        <li>техническая поддержка — ответы на сложные вопросы</li>
-        <li>персональные предложения — индивидуальные коммерческие предложения</li>
-      </ol>
-      <h3>Детали реализации</h3>
-      <ul class="points">
-        <li>интерактивный подбор кассы по 12 критериям</li>
-        <li>автоматическое определение типа бизнеса по поведению</li>
-        <li>чат-бот с базой знаний из 200+ вопросов</li>
-        <li>персональные КП с расчетом экономии для клиента</li>
-      </ul>
-      <h3>Результат</h3>
-      <p class="result-headline">+30% к продажам с сайта за счет проактивной помощи</p>
-      <p>Время до первого контакта сократилось с 2 дней до 15 минут. Качество лидов выросло на 40%. Средний чек увеличился на 25%.</p>
-      <p><a href="https://www.carrotquest.io/blog/case-atol-online/" target="_blank">Подробнее на carrotquest.io</a></p>
+      <div class="case-page accent-orange">
+        <span class="eyebrow">АТОЛ Онлайн · B2B E-commerce</span>
+        <h2>Персонализация B2B-продаж</h2>
+        <h3>Клиент</h3>
+        <p>АТОЛ Онлайн — лидер рынка онлайн-касс с оборотом 2+ млрд рублей.</p>
+        <h3>Вызов</h3>
+        <p>Сложный B2B-продукт с длинным циклом сделки: клиентам трудно выбрать подходящую кассу из 50+ моделей, много технических вопросов и требований, путь от интереса к покупке занимал 2–3 месяца, конверсия сайта была менее 1%.</p>
+        <h3>Решение Carrot quest</h3>
+        <ol class="points">
+          <li>консультационные боты — помощь в выборе оборудования</li>
+          <li>квалификация по бизнесу — сегментация по типу деятельности</li>
+          <li>техническая поддержка — ответы на сложные вопросы</li>
+          <li>персональные предложения — индивидуальные коммерческие предложения</li>
+        </ol>
+        <h3>Детали реализации</h3>
+        <ul class="points">
+          <li>интерактивный подбор кассы по 12 критериям</li>
+          <li>автоматическое определение типа бизнеса по поведению</li>
+          <li>чат-бот с базой знаний из 200+ вопросов</li>
+          <li>персональные КП с расчетом экономии для клиента</li>
+        </ul>
+        <h3>Результат</h3>
+        <p class="result-headline">+30% к продажам с сайта за счет проактивной помощи</p>
+        <p>Время до первого контакта сократилось с 2 дней до 15 минут. Качество лидов выросло на 40%. Средний чек увеличился на 25%.</p>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/case-atol-online/" target="_blank">Подробнее на carrotquest.io →</a>
+      </div>
     </div>
 
     <div class="case-detail" id="case-klinkmann" style="display:none;">
       <span class="back-link" data-back-to-cases="1">← ко всем кейсам</span>
-      <h2 style="margin-top:16px;">⚙️ Klinkmann: техническая поддержка продаж</h2>
-      <h3>Клиент</h3>
-      <p>Klinkmann — поставщик компонентов для промышленной автоматизации.</p>
-      <h3>Вызов</h3>
-      <p>Специфика B2B-аудитории инженеров и проектировщиков: клиенты изучают техническую документацию, но не всегда покупают, сложные технические вопросы требуют экспертизы, циклы принятия решений длинные, нужно работать с существующей базой клиентов.</p>
-      <h3>Решение Carrot quest</h3>
-      <ol class="points">
-        <li>контекстные предложения — помощь при изучении каталога</li>
-        <li>техническая экспертиза — консультации по применению</li>
-        <li>информация о наличии — актуальные данные со склада</li>
-        <li>персональные менеджеры — связь с экспертами компании</li>
-      </ol>
-      <h3>Детали реализации</h3>
-      <ul class="points">
-        <li>триггеры при просмотре определенных категорий товаров</li>
-        <li>автоматические уведомления о поступлении товара на склад</li>
-        <li>чат с техническими специалистами в рабочее время</li>
-        <li>персональные предложения на основе истории покупок</li>
-      </ul>
-      <h3>Результат</h3>
-      <p class="result-headline">+26% к конверсии в заказ на сайте</p>
-      <p>Повторные покупки выросли на 35%. Средний чек увеличился на 20%. Время от запроса до заказа сократилось на 40%.</p>
-      <p><a href="https://www.carrotquest.io/blog/case-klinkmann/" target="_blank">Подробнее на carrotquest.io</a></p>
+      <div class="case-page accent-lime">
+        <span class="eyebrow">Klinkmann · B2B E-commerce</span>
+        <h2>Техническая поддержка продаж</h2>
+        <h3>Клиент</h3>
+        <p>Klinkmann — поставщик компонентов для промышленной автоматизации.</p>
+        <h3>Вызов</h3>
+        <p>Специфика B2B-аудитории инженеров и проектировщиков: клиенты изучают техническую документацию, но не всегда покупают, сложные технические вопросы требуют экспертизы, циклы принятия решений длинные, нужно работать с существующей базой клиентов.</p>
+        <h3>Решение Carrot quest</h3>
+        <ol class="points">
+          <li>контекстные предложения — помощь при изучении каталога</li>
+          <li>техническая экспертиза — консультации по применению</li>
+          <li>информация о наличии — актуальные данные со склада</li>
+          <li>персональные менеджеры — связь с экспертами компании</li>
+        </ol>
+        <h3>Детали реализации</h3>
+        <ul class="points">
+          <li>триггеры при просмотре определенных категорий товаров</li>
+          <li>автоматические уведомления о поступлении товара на склад</li>
+          <li>чат с техническими специалистами в рабочее время</li>
+          <li>персональные предложения на основе истории покупок</li>
+        </ul>
+        <h3>Результат</h3>
+        <p class="result-headline">+26% к конверсии в заказ на сайте</p>
+        <p>Повторные покупки выросли на 35%. Средний чек увеличился на 20%. Время от запроса до заказа сократилось на 40%.</p>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/case-klinkmann/" target="_blank">Подробнее на carrotquest.io →</a>
+      </div>
     </div>
   </section>
 
