@@ -4,88 +4,158 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sales Kit — Carrot quest × Vitamin.tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ВРЕМЕННЫЕ СТИЛИ — только структура и читаемость.
-   Финальный дизайн в стиле carrotquest.io добавим на втором проходе. */
+/* Дизайн-система на основе фирменных цветов carrotquest.io:
+   #FC7C01 (флеш-оранжевый), #D0FF37 (лаймовый), чёрный, белый.
+   Manrope — заголовки, Inter — текст. */
+
+:root {
+  --black: #0b0b0c;
+  --orange: #fc7c01;
+  --orange-dark: #d96a00;
+  --lime: #d0ff37;
+  --gray-900: #1a1a1a;
+  --gray-600: #5c5c5c;
+  --gray-300: #d8d8d8;
+  --gray-100: #f6f6f6;
+  --white: #ffffff;
+  --radius: 14px;
+}
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: -apple-system, "Segoe UI", Arial, sans-serif;
-  color: #1a1a1a;
-  line-height: 1.5;
-  background: #fff;
+  font-family: 'Inter', -apple-system, "Segoe UI", Arial, sans-serif;
+  color: var(--gray-900);
+  line-height: 1.55;
+  background: var(--white);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.01em;
 }
 
 header {
-  border-bottom: 1px solid #eaeaea;
-  padding: 16px 32px;
+  background: var(--black);
+  padding: 18px 32px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header .logo {
-  font-weight: 700;
-  font-size: 18px;
-  margin-right: 16px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--white);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
+header .logo .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: inline-block;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
 
 nav a {
-  color: #1a1a1a;
+  color: #b8b8b8;
   text-decoration: none;
-  margin-right: 20px;
   font-size: 14px;
-  padding: 6px 0;
-  border-bottom: 2px solid transparent;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
   cursor: pointer;
+  transition: color .15s, background .15s;
 }
 
-nav a:hover, nav a.active {
-  border-bottom: 2px solid #ffb200;
+nav a:hover { color: var(--white); }
+
+nav a.active {
+  color: var(--black);
+  background: var(--orange);
 }
 
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 48px 24px 96px;
 }
 
 .view { display: none; }
 .view.active { display: block; }
 
-h1 { font-size: 30px; margin-bottom: 4px; }
-h2 { font-size: 22px; margin-top: 56px; border-top: 1px solid #eaeaea; padding-top: 32px; }
-h2:first-of-type { margin-top: 32px; }
-h3 { font-size: 17px; margin-top: 28px; }
+.eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  margin-bottom: 10px;
+}
 
-.subtitle { color: #666; margin-bottom: 32px; }
+h1 { font-size: 32px; margin: 0 0 6px; line-height: 1.15; }
+h2 {
+  font-size: 22px;
+  margin-top: 60px;
+  padding-top: 28px;
+  border-top: 2px solid var(--black);
+}
+h2:first-of-type { margin-top: 36px; }
+h3 { font-size: 16px; margin-top: 26px; }
+h4 { font-size: 15px; }
 
-ul.points { margin: 8px 0 16px 20px; }
-ul.points li { margin-bottom: 4px; }
+.subtitle { color: var(--gray-600); font-size: 16px; margin-bottom: 32px; }
+
+ul.points, ol.points { margin: 8px 0 16px 20px; padding: 0; }
+ul.points li, ol.points li { margin-bottom: 6px; }
 
 .resource-box {
-  border: 1px dashed #ccc;
-  background: #fffbe8;
-  border-radius: 8px;
-  padding: 14px 16px;
-  margin: 12px 0 20px;
+  border: 1.5px solid var(--black);
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 14px 0 22px;
   font-size: 14px;
 }
 
-.resource-box a { color: #0060df; }
+.resource-box a {
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--orange);
+}
+
+.resource-box a:hover { color: var(--orange-dark); }
 
 .todo {
   display: inline-block;
-  background: #ffe1e1;
-  color: #b00000;
+  background: var(--black);
+  color: var(--lime);
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
   margin-left: 8px;
   vertical-align: middle;
 }
@@ -99,58 +169,93 @@ ul.points li { margin-bottom: 4px; }
 
 .segment-card {
   flex: 1 1 200px;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  padding: 16px;
+  border: 1.5px solid var(--black);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: var(--white);
 }
 
-.segment-card h4 { margin: 0 0 8px; }
+.segment-card h4 { margin: 0 0 10px; }
 
 .landing-grid {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 .landing-card {
   flex: 1 1 250px;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  padding: 24px;
+  border: 2px solid var(--black);
+  border-radius: var(--radius);
+  padding: 26px;
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--gray-900);
   display: block;
   cursor: pointer;
-  background: none;
+  background: var(--white);
   font: inherit;
   text-align: left;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
 }
 
-.landing-card:hover { border-color: #ffb200; }
-.landing-card h3 { margin-top: 0; }
-.landing-card p { color: #666; font-size: 14px; margin-bottom: 0; }
+.landing-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 0 var(--black);
+}
+
+.landing-card h3 { margin-top: 0; font-size: 18px; }
+.landing-card p { color: var(--gray-600); font-size: 14px; margin-bottom: 0; }
+
+.landing-card .metric-badge {
+  display: inline-block;
+  background: var(--lime);
+  color: var(--black);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
 
 .back-link {
   display: inline-block;
-  margin-bottom: 16px;
-  color: #666;
+  margin-bottom: 18px;
+  color: var(--gray-600);
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+}
+
+.back-link:hover { color: var(--orange-dark); }
+
+.result-headline {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--black);
+  background: var(--lime);
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 6px 0 12px;
 }
 
 footer {
   text-align: center;
-  color: #999;
+  color: var(--gray-600);
   font-size: 12px;
-  padding: 24px;
+  padding: 28px;
+  background: var(--gray-100);
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo" data-goto="home">🥕 Carrot quest × Vitamin.tools</div>
+  <div class="logo" data-goto="home"><span class="dot"></span>Carrot quest × Vitamin.tools</div>
   <nav>
     <a data-goto="home">Главная</a>
     <a data-goto="product">О продукте</a>
@@ -163,19 +268,23 @@ footer {
 
   <!-- ===== ГЛАВНАЯ ===== -->
   <section class="view active" id="view-home">
-    <h1>Sales Kit для команды продаж</h1>
+    <span class="eyebrow">Sales Kit</span>
+    <h1>Материалы для команды продаж</h1>
     <p class="subtitle">Всё, что нужно команде Vitamin.tools, чтобы уверенно продавать Carrot quest клиентам.</p>
 
     <div class="landing-grid">
       <button class="landing-card" data-goto="product">
+        <span class="metric-badge">демо · кейсы · сегменты</span>
         <h3>О продукте Carrot quest</h3>
-        <p>Демо, кейсы клиентов, презентация продукта и подход к продаже в разных сегментах.</p>
+        <p>Демо, презентация, успешные кейсы клиентов и подход к продаже в разных сегментах.</p>
       </button>
       <button class="landing-card" data-goto="vitamin">
+        <span class="metric-badge">оффер · бонусы</span>
         <h3>Vitamin.tools + Carrot quest</h3>
         <p>Почему эта связка работает, бонусы для команды продаж, отработка возражений.</p>
       </button>
       <button class="landing-card" data-goto="hub">
+        <span class="metric-badge">только для партнёров</span>
         <h3>Материалы партнёрского хаба</h3>
         <p>Актуальная информация, доступная только партнёрам.</p>
       </button>
@@ -185,6 +294,7 @@ footer {
   <!-- ===== О ПРОДУКТЕ ===== -->
   <section class="view" id="view-product">
     <span class="back-link" data-goto="home">← на главную</span>
+    <span class="eyebrow">Раздел 1</span>
     <h1>О продукте Carrot quest</h1>
     <p class="subtitle">Всё, что нужно знать о продукте, чтобы уверенно рассказывать о нём клиентам.</p>
 
@@ -200,6 +310,12 @@ footer {
       по вопросам — Сергей Глухов, руководитель направления по работе с партнёрами
     </div>
 
+    <h2>Презентация о Carrot quest</h2>
+    <p>Всё о продукте в удобной форме — презентацию можно показывать клиентам напрямую.</p>
+    <div class="resource-box">
+      🖥 Презентация клиентам о Carrot quest — <a href="https://docs.google.com/presentation/d/17xxjzO9DnVLoKkfGchgUZJdv81DsNqfL/edit?slide=id.g3523b9bf224_9_28#slide=id.g3523b9bf224_9_28" target="_blank">открыть</a>
+    </div>
+
     <h2>Успешные кейсы клиентов</h2>
     <ul class="points">
       <li>кого можно приводить в пример</li>
@@ -209,12 +325,6 @@ footer {
       <h3>Смотреть кейсы →</h3>
       <p>Нетология, Skillfactory, Fitstars, Storyland, АТОЛ Онлайн, Klinkmann — с цифрами и деталями решения</p>
     </button>
-
-    <h2>Презентация о Carrot quest</h2>
-    <p>Всё о продукте в удобной форме — презентацию можно показывать клиентам напрямую.</p>
-    <div class="resource-box">
-      🖥 Презентация клиентам о Carrot quest — <a href="https://docs.google.com/presentation/d/17xxjzO9DnVLoKkfGchgUZJdv81DsNqfL/edit?slide=id.g3523b9bf224_9_28#slide=id.g3523b9bf224_9_28" target="_blank">открыть</a>
-    </div>
 
     <h2>Как продавать продукт конкретным сегментам</h2>
     <p>Подход к продаже отличается по сегментам — ниже материалы под каждый.</p>
@@ -237,6 +347,7 @@ footer {
   <!-- ===== УСПЕШНЫЕ КЕЙСЫ КЛИЕНТОВ ===== -->
   <section class="view" id="view-cases">
     <span class="back-link" data-goto="product">← к разделу «О продукте»</span>
+    <span class="eyebrow">О продукте</span>
     <h1>Успешные кейсы клиентов</h1>
     <p class="subtitle">EdTech · SaaS · B2B E-commerce</p>
 
@@ -311,7 +422,7 @@ footer {
         <li>персональные предложения на основе просмотренных курсов</li>
       </ul>
       <h3>Результат</h3>
-      <p style="font-size:20px; font-weight:700; color:#b06a00;">+21% к конверсии в оплату курсов</p>
+      <p class="result-headline">+21% к конверсии в оплату курсов</p>
       <p>Время до покупки сократилось на 35%. Обращения в поддержку снизились на 40%. NPS вырос с 7.2 до 8.1.</p>
       <p><a href="https://www.carrotquest.io/blog/case-netology/" target="_blank">Подробнее на carrotquest.io</a></p>
     </div>
@@ -338,7 +449,7 @@ footer {
         <li>цепочки дозревания для «теплых» лидов (5–7 баллов)</li>
       </ul>
       <h3>Результат</h3>
-      <p style="font-size:20px; font-weight:700; color:#b06a00;">+44% к конверсии в покупку и рост среднего чека</p>
+      <p class="result-headline">+44% к конверсии в покупку и рост среднего чека</p>
       <p>Время менеджера на лида сократилось в 2.5 раза. Конверсия звонка в продажу выросла с 12% до 18%. Средний чек вырос на 15%.</p>
       <p><a href="https://www.carrotquest.io/blog/case-skillfactory/" target="_blank">Подробнее на carrotquest.io</a></p>
     </div>
@@ -365,7 +476,7 @@ footer {
         <li>специальные предложения в конце триала со скидкой 30%</li>
       </ul>
       <h3>Результат</h3>
-      <p style="font-size:20px; font-weight:700; color:#b06a00;">+11% к конверсии в оплату и рост удержания пользователей</p>
+      <p class="result-headline">+11% к конверсии в оплату и рост удержания пользователей</p>
       <p>Активные пользователи в триале выросли с 35% до 52%. Время до первой тренировки сократилось с 3.2 до 1.8 дней. Retention на 30-й день вырос с 25% до 31%.</p>
       <p><a href="https://www.carrotquest.io/blog/case-fitstars/" target="_blank">Подробнее на carrotquest.io</a></p>
     </div>
@@ -392,7 +503,7 @@ footer {
         <li>A/B-тестирование разных сценариев монетизации</li>
       </ul>
       <h3>Результат</h3>
-      <p style="font-size:20px; font-weight:700; color:#b06a00;">100 000 рублей дополнительного дохода без вложений в трафик</p>
+      <p class="result-headline">100 000 рублей дополнительного дохода без вложений в трафик</p>
       <p>Конверсия Free → Premium выросла с 3.2% до 7.8%. ARPU вырос на 45%. Время жизни пользователя увеличилось на 60%.</p>
       <p><a href="https://www.carrotquest.io/blog/storyland-case/" target="_blank">Подробнее на carrotquest.io</a></p>
     </div>
@@ -419,7 +530,7 @@ footer {
         <li>персональные КП с расчетом экономии для клиента</li>
       </ul>
       <h3>Результат</h3>
-      <p style="font-size:20px; font-weight:700; color:#b06a00;">+30% к продажам с сайта за счет проактивной помощи</p>
+      <p class="result-headline">+30% к продажам с сайта за счет проактивной помощи</p>
       <p>Время до первого контакта сократилось с 2 дней до 15 минут. Качество лидов выросло на 40%. Средний чек увеличился на 25%.</p>
       <p><a href="https://www.carrotquest.io/blog/case-atol-online/" target="_blank">Подробнее на carrotquest.io</a></p>
     </div>
@@ -446,7 +557,7 @@ footer {
         <li>персональные предложения на основе истории покупок</li>
       </ul>
       <h3>Результат</h3>
-      <p style="font-size:20px; font-weight:700; color:#b06a00;">+26% к конверсии в заказ на сайте</p>
+      <p class="result-headline">+26% к конверсии в заказ на сайте</p>
       <p>Повторные покупки выросли на 35%. Средний чек увеличился на 20%. Время от запроса до заказа сократилось на 40%.</p>
       <p><a href="https://www.carrotquest.io/blog/case-klinkmann/" target="_blank">Подробнее на carrotquest.io</a></p>
     </div>
@@ -455,6 +566,7 @@ footer {
   <!-- ===== VITAMIN.TOOLS + CARROT QUEST ===== -->
   <section class="view" id="view-vitamin">
     <span class="back-link" data-goto="home">← на главную</span>
+    <span class="eyebrow">Раздел 2</span>
     <h1>Vitamin.tools + Carrot quest</h1>
     <p class="subtitle">Почему эта связка работает и что это значит для команды продаж.</p>
 
@@ -485,6 +597,7 @@ footer {
   <!-- ===== МАТЕРИАЛЫ ХАБА ===== -->
   <section class="view" id="view-hub">
     <span class="back-link" data-goto="home">← на главную</span>
+    <span class="eyebrow">Раздел 3</span>
     <h1>Материалы партнёрского хаба</h1>
     <p class="subtitle">Актуальная информация, доступная только партнёрам.</p>
 
