@@ -94,9 +94,9 @@ nav a.active {
 }
 
 main {
-  max-width: 900px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 48px 24px 96px;
+  padding: 48px 32px 96px;
 }
 
 .view { display: none; }
@@ -175,20 +175,88 @@ ul.points li, ol.points li { margin-bottom: 6px; }
   background: var(--white);
 }
 
-.segment-card h4 { margin: 0 0 10px; }
+.segment-card h4 { margin: 0 0 10px; white-space: nowrap; }
+
+.product-card {
+  position: relative;
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  padding: 32px 30px 26px;
+  margin: 28px 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--stripe, var(--orange));
+}
+
+.product-card.accent-lime { --stripe: var(--lime); }
+.product-card.accent-orange { --stripe: var(--orange); }
+.product-card.accent-black { --stripe: var(--black); }
+
+.product-card .step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.product-card h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  font-size: 21px;
+}
+
+.video-embed {
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid var(--black);
+  aspect-ratio: 16/9;
+  background: var(--gray-100);
+}
+
+.video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.speaker-note {
+  font-size: 13.5px;
+  color: var(--gray-600);
+}
+
+.speaker-note b { color: var(--black); }
+
+@media (max-width: 640px) {
+  .landing-card h3, .segment-card h4 { white-space: normal; font-size: 17px; }
+  .landing-card { padding: 26px 22px; }
+  .product-card { padding: 24px 20px 20px; }
+}
 
 .landing-grid {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
-  margin-top: 36px;
+  margin-top: 40px;
 }
 
 .landing-card {
-  flex: 1 1 250px;
+  flex: 1 1 320px;
   border: 2px solid var(--black);
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 36px 32px;
   text-decoration: none;
   color: var(--gray-900);
   display: block;
@@ -197,6 +265,7 @@ ul.points li, ol.points li { margin-bottom: 6px; }
   font: inherit;
   text-align: left;
   transition: border-color .15s, transform .15s, box-shadow .15s;
+  min-height: 190px;
 }
 
 .landing-card:hover {
@@ -205,8 +274,12 @@ ul.points li, ol.points li { margin-bottom: 6px; }
   box-shadow: 0 8px 0 0 var(--black);
 }
 
-.landing-card h3 { margin-top: 0; font-size: 18px; }
-.landing-card p { color: var(--gray-600); font-size: 14px; margin-bottom: 0; }
+.landing-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.landing-card p { color: var(--gray-600); font-size: 14.5px; margin-bottom: 0; }
 
 .landing-card .metric-badge {
   display: inline-block;
@@ -298,51 +371,67 @@ footer {
     <h1>О продукте Carrot quest</h1>
     <p class="subtitle">Всё, что нужно знать о продукте, чтобы уверенно рассказывать о нём клиентам.</p>
 
-    <h2>Демо продукта</h2>
-    <ul class="points">
-      <li>как выглядит сервис</li>
-      <li>из чего состоит</li>
-      <li>какие клиенты используют</li>
-      <li>куда смотреть</li>
-    </ul>
-    <div class="resource-box">
-      📄 Демо продукта — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">открыть видео</a><br>
-      по вопросам — Сергей Глухов, руководитель направления по работе с партнёрами
+    <div class="product-card accent-orange">
+      <span class="step-badge">1</span>
+      <h2>Демо продукта</h2>
+      <ul class="points">
+        <li>как выглядит сервис</li>
+        <li>из чего состоит</li>
+        <li>какие клиенты используют</li>
+        <li>куда смотреть</li>
+      </ul>
+      <div class="video-embed">
+        <iframe src="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <p class="speaker-note">рассказывает <b>Сергей Глухов</b>, руководитель направления по работе с партнёрами</p>
+      <div class="resource-box">
+        📄 Если видео не открывается — <a href="https://drive.google.com/file/d/1dqFOnREEXvD0q3VaGRcSdDuQuYZojShv/view" target="_blank">смотреть в Google Drive</a>
+      </div>
     </div>
 
-    <h2>Презентация о Carrot quest</h2>
-    <p>Всё о продукте в удобной форме — презентацию можно показывать клиентам напрямую.</p>
-    <div class="resource-box">
-      🖥 Презентация клиентам о Carrot quest — <a href="https://docs.google.com/presentation/d/17xxjzO9DnVLoKkfGchgUZJdv81DsNqfL/edit?slide=id.g3523b9bf224_9_28#slide=id.g3523b9bf224_9_28" target="_blank">открыть</a>
+    <div class="product-card accent-lime">
+      <span class="step-badge">2</span>
+      <h2>Презентация о Carrot quest</h2>
+      <p>Всё о продукте в удобной форме — презентацию можно показывать клиентам напрямую.</p>
+      <div class="resource-box">
+        🖥 Презентация клиентам о Carrot quest — <a href="https://docs.google.com/presentation/d/17xxjzO9DnVLoKkfGchgUZJdv81DsNqfL/edit?slide=id.g3523b9bf224_9_28#slide=id.g3523b9bf224_9_28" target="_blank">открыть</a>
+      </div>
     </div>
 
-    <h2>Успешные кейсы клиентов</h2>
-    <ul class="points">
-      <li>кого можно приводить в пример</li>
-      <li>какую пользу принёс продукт</li>
-    </ul>
-    <button class="landing-card" data-goto="cases" style="max-width:320px;">
-      <h3>Смотреть кейсы →</h3>
-      <p>Нетология, Skillfactory, Fitstars, Storyland, АТОЛ Онлайн, Klinkmann — с цифрами и деталями решения</p>
-    </button>
+    <div class="product-card accent-orange">
+      <span class="step-badge">3</span>
+      <h2>Успешные кейсы клиентов</h2>
+      <ul class="points">
+        <li>кого можно приводить в пример</li>
+        <li>какую пользу принёс продукт</li>
+      </ul>
+      <button class="landing-card" data-goto="cases" style="max-width:360px; min-height:auto;">
+        <h3>Смотреть кейсы →</h3>
+        <p>Нетология, Skillfactory, Fitstars, Storyland, АТОЛ Онлайн, Klinkmann — с цифрами и деталями решения</p>
+      </button>
+    </div>
 
-    <h2>Как продавать продукт конкретным сегментам</h2>
-    <p>Подход к продаже отличается по сегментам — ниже материалы под каждый.</p>
-    <div class="segment-grid">
-      <div class="segment-card">
-        <h4>B2B e-com</h4>
-        <div class="resource-box"><a href="https://docs.google.com/presentation/d/1S09OVGJJnFUcQszWlOB3uvEhAJqLhsuo-_9ouxhHSIA/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
-      </div>
-      <div class="segment-card">
-        <h4>SaaS</h4>
-        <div class="resource-box"><a href="https://docs.google.com/presentation/d/1_IIqAiSp4HvjSncSbfYzjtyAannH3jsEq9ikSQnSitc/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
-      </div>
-      <div class="segment-card">
-        <h4>EdTech</h4>
-        <div class="resource-box"><a href="https://docs.google.com/presentation/d/1CQgz-M_AoWKT_V230gUVYvDwTO1pbbCNEUjmENR2pyo/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+    <div class="product-card accent-lime">
+      <span class="step-badge">4</span>
+      <h2>Как продавать продукт конкретным сегментам</h2>
+      <p>Подход к продаже отличается по сегментам — ниже материалы под каждый.</p>
+      <div class="segment-grid">
+        <div class="segment-card">
+          <h4>B2B e-com</h4>
+          <div class="resource-box"><a href="https://docs.google.com/presentation/d/1S09OVGJJnFUcQszWlOB3uvEhAJqLhsuo-_9ouxhHSIA/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+        </div>
+        <div class="segment-card">
+          <h4>SaaS</h4>
+          <div class="resource-box"><a href="https://docs.google.com/presentation/d/1_IIqAiSp4HvjSncSbfYzjtyAannH3jsEq9ikSQnSitc/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+        </div>
+        <div class="segment-card">
+          <h4>EdTech</h4>
+          <div class="resource-box"><a href="https://docs.google.com/presentation/d/1CQgz-M_AoWKT_V230gUVYvDwTO1pbbCNEUjmENR2pyo/edit?slide=id.p1#slide=id.p1" target="_blank">открыть</a></div>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- ===== УСПЕШНЫЕ КЕЙСЫ КЛИЕНТОВ ===== -->
   <section class="view" id="view-cases">
@@ -599,12 +688,11 @@ footer {
     <span class="back-link" data-goto="home">← на главную</span>
     <span class="eyebrow">Раздел 3</span>
     <h1>Материалы партнёрского хаба</h1>
-    <p class="subtitle">Актуальная информация, доступная только партнёрам.</p>
 
-    <h2>Преза хаба</h2>
-    <p>Описание: здесь актуальная информация только для партнёров.</p>
-    <div class="resource-box">
-      🖥 Преза партнёрского хаба — <a href="http://docs.google.com/presentation/d/1Rt2sNsOYTIQxWfbyMGEwKGkMXBzYmnFRVcmOiDLt2pE/edit?slide=id.p#slide=id.p" target="_blank">открыть</a>
+    <div class="product-card accent-orange">
+      <div class="resource-box">
+        🖥 Презентация для партнёров Carrot quest — <a href="http://docs.google.com/presentation/d/1Rt2sNsOYTIQxWfbyMGEwKGkMXBzYmnFRVcmOiDLt2pE/edit?slide=id.p#slide=id.p" target="_blank">открыть</a>
+      </div>
     </div>
   </section>
 
