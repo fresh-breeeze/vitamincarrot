@@ -467,6 +467,48 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .blog-cta:hover { background: var(--orange); color: var(--black); }
 
+.contact-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.contact-card {
+  flex: 1 1 280px;
+  border: 2px solid var(--black);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: center;
+  background: var(--white);
+}
+
+.contact-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 18px;
+  border: 2px solid var(--black);
+}
+
+.contact-name {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+
+.contact-role {
+  color: var(--gray-600);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-card .pill-button { background: var(--lime); }
+.contact-card .pill-button:hover { background: var(--orange); }
+
 .speaker-note {
   font-size: 13.5px;
   color: var(--gray-600);
@@ -572,6 +614,7 @@ footer {
     <a data-goto="product">О продукте</a>
     <a data-goto="vitamin">Vitamin.tools + Carrot quest</a>
     <a data-goto="hub">Материалы хаба</a>
+    <a data-goto="contacts">Контакты</a>
   </nav>
 </header>
 
@@ -598,6 +641,11 @@ footer {
         <span class="metric-badge">только для партнёров</span>
         <h3>Материалы партнёрского хаба</h3>
         <p>Актуальная информация, доступная только партнёрам.</p>
+      </button>
+      <button class="landing-card" data-goto="contacts">
+        <span class="metric-badge">Сергей · Полина</span>
+        <h3>Контакты</h3>
+        <p>Есть вопросы — можно написать напрямую в Telegram.</p>
       </button>
     </div>
   </section>
@@ -763,7 +811,7 @@ footer {
       </div>
 
       <div class="resource-box" style="margin-top:32px;">
-        📄 PDF-файл с кейсами — <a href="https://drive.google.com/file/d/1oHhI6zJjczw9LqMzS8hIfzTURenWMq5x/view" target="_blank">открыть</a>
+        📄 PDF-файл с кейсами — <a href="carrot-quest-cases.pdf" target="_blank">открыть</a>
       </div>
 
       <a class="blog-cta" href="https://www.carrotquest.io/blog/" target="_blank" style="margin-top:20px;">Ещё больше кейсов в блоге Carrot quest →</a>
@@ -794,7 +842,7 @@ footer {
         <h3>Результат</h3>
         <p class="result-headline">50% всей выручки с сайта приносят инструменты Carrot quest</p>
         <p>Общее количество лидов с сайта увеличилось на 50% при том же объеме трафика. Конверсия из лида в продажу у поп-апа по брошенной корзине заметно выше стандартных форм. Подписка окупилась уже за несколько месяцев работы.</p>
-        <a class="case-outbound" href="https://www.carrotquest.io/blog/" target="_blank">Подробнее на carrotquest.io →</a>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/case-umschool/" target="_blank">Подробнее на carrotquest.io →</a>
       </div>
     </div>
 
@@ -941,7 +989,7 @@ footer {
         <h3>Результат</h3>
         <p class="result-headline">12% заявок на сайте — от инструментов Carrot quest, 60% из них целевые</p>
         <p>Сэкономлено около 3 недель рабочего времени менеджеров по продажам. Отсеяно множество нецелевых сделок, что позволило команде сфокусироваться на перспективных клиентах.</p>
-        <a class="case-outbound" href="https://www.carrotquest.io/blog/" target="_blank">Подробнее на carrotquest.io →</a>
+        <a class="case-outbound" href="https://www.carrotquest.io/blog/cleverence-case/" target="_blank">Подробнее на carrotquest.io →</a>
       </div>
     </div>
   </section>
@@ -986,6 +1034,29 @@ footer {
     <div class="product-card accent-orange">
       <div class="resource-box">
         🖥 Презентация для партнёров Carrot quest — <a href="http://docs.google.com/presentation/d/1Rt2sNsOYTIQxWfbyMGEwKGkMXBzYmnFRVcmOiDLt2pE/edit?slide=id.p#slide=id.p" target="_blank">открыть</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== КОНТАКТЫ ===== -->
+  <section class="view" id="view-contacts">
+    <span class="back-link" data-goto="home">← на главную</span>
+    <span class="eyebrow">Раздел 4</span>
+    <h1>Контакты</h1>
+    <p class="subtitle">Если остались вопросы — можно написать напрямую.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <img class="contact-avatar" src="sergei.jpeg" alt="Сергей Глухов">
+        <div class="contact-name">Сергей Глухов</div>
+        <div class="contact-role">руководитель направления по работе с партнёрами</div>
+        <a class="pill-button" href="https://t.me/gluckoff" target="_blank">Написать в Telegram →</a>
+      </div>
+      <div class="contact-card">
+        <img class="contact-avatar" src="polina.jpeg" alt="Полина Лавелина">
+        <div class="contact-name">Полина Лавелина</div>
+        <div class="contact-role">бизнес-партнёр</div>
+        <a class="pill-button" href="https://t.me/poviardo" target="_blank">Написать в Telegram →</a>
       </div>
     </div>
   </section>
@@ -1058,7 +1129,7 @@ document.querySelectorAll('[data-goto="cases"]').forEach(function(el) {
 
 // открыть нужный экран, если пришли по ссылке с хэшем
 var initial = window.location.hash.replace('#', '');
-if (['product', 'cases', 'vitamin', 'hub'].includes(initial)) {
+if (['product', 'cases', 'vitamin', 'hub', 'contacts'].includes(initial)) {
   goto(initial);
 }
 </script>
