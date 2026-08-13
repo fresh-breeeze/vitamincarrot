@@ -283,6 +283,7 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 .product-card { scroll-margin-top: 90px; }
+#card-why, #card-promo, #card-bonuses { scroll-margin-top: 90px; }
 
 .section-nav {
   display: flex;
@@ -467,6 +468,99 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .blog-cta:hover { background: var(--orange); color: var(--black); }
 
+.why-block {
+  background: var(--black);
+  border-radius: 20px;
+  padding: 32px 34px;
+  margin: 20px 0;
+}
+
+.why-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.why-block h3 { color: var(--white); font-size: 20px; margin: 0 0 14px; border-top: none; padding-top: 0; }
+.why-block p { color: #d4d4d4; }
+
+.tag-vitamin, .tag-carrot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  border: 1.5px solid;
+}
+.tag-vitamin { border-color: var(--orange); color: var(--orange); }
+.tag-carrot { border-color: var(--lime); color: var(--lime); }
+
+.why-cols { display: flex; gap: 24px; flex-wrap: wrap; }
+.why-col { flex: 1 1 260px; }
+.why-col h4 { color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; margin: 4px 0 10px; }
+.why-col ul { margin: 0 0 0 18px; padding: 0; font-size: 14px; color: #d4d4d4; }
+.why-col ul li { margin-bottom: 6px; }
+
+.why-result {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: #ececec;
+  font-size: 14px;
+}
+.why-result b { color: var(--lime); }
+
+.offer-quote {
+  background: rgba(208,255,55,.1);
+  border: 1px solid var(--lime);
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  margin: 14px 0 18px;
+}
+
+.why-funnel-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13.5px; }
+.why-funnel-table th {
+  color: var(--lime);
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.why-funnel-table td { color: #d4d4d4; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
+.why-funnel-table td:first-child { color: var(--white); font-weight: 700; }
+
+.roas-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 18px; }
+.roas-item { flex: 1 1 260px; background: rgba(255,255,255,.05); border-radius: 12px; padding: 20px; }
+.roas-item h4 { color: var(--lime); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px; }
+.roas-item p { color: #ececec; font-size: 14px; margin: 0; }
+.roas-item b { color: var(--white); }
+
+.why-callout {
+  margin-top: 18px;
+  background: var(--lime);
+  color: var(--black);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .why-funnel-table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
 .contact-grid {
   display: flex;
   gap: 24px;
@@ -508,6 +602,119 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .contact-card .pill-button { background: var(--lime); }
 .contact-card .pill-button:hover { background: var(--orange); }
+
+.promo-card {
+  background: var(--black);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 28px 0;
+}
+
+.promo-left { flex: 1 1 320px; }
+
+.promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.08);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+}
+
+.promo-badge::before { content: '●'; color: var(--orange); font-size: 9px; }
+
+.promo-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--white);
+  line-height: 1.15;
+  margin: 0 0 16px;
+  border-top: none;
+  padding-top: 0;
+}
+
+.promo-highlight {
+  background: var(--lime);
+  color: var(--black);
+  padding: 2px 12px;
+  border-radius: 8px;
+}
+
+.promo-desc { color: #d4d4d4; font-size: 15px; margin-bottom: 16px; line-height: 1.6; }
+.promo-desc b { color: var(--white); }
+
+.promo-points { margin: 0 0 26px 20px; padding: 0; color: #d4d4d4; font-size: 14px; }
+.promo-points li { margin-bottom: 8px; }
+
+.promo-activate {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+
+.promo-activate-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lime);
+  text-transform: uppercase;
+}
+
+.promo-activate p { color: #ececec; font-size: 14px; margin: 10px 0 14px; }
+
+.promo-code {
+  display: inline-block;
+  background: var(--lime);
+  color: var(--black);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 21px;
+  padding: 8px 22px;
+  border-radius: 8px;
+}
+
+.promo-features {
+  flex: 1 1 440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feature-mini {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.feature-mini .feature-icon { font-size: 20px; display: block; margin-bottom: 12px; }
+.feature-mini .icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.feature-mini h4 { font-size: 15px; margin: 0 0 8px; color: var(--black); white-space: normal; }
+.feature-mini p { font-size: 13px; color: var(--gray-600); margin: 0; line-height: 1.5; }
+
+@media (max-width: 720px) {
+  .promo-features { grid-template-columns: 1fr; }
+}
 
 .speaker-note {
   font-size: 13.5px;
@@ -1001,32 +1208,166 @@ footer {
     <h1>Vitamin.tools + Carrot quest</h1>
     <p class="subtitle">Почему эта связка работает и что это значит для команды продаж.</p>
 
-    <h2>Почему Vitamin.tools + Carrot quest</h2>
-    <ul class="points">
-      <li>совместный оффер (ссылка из ноушн / one page)</li>
-      <li>как продукты дополняют друг друга</li>
-      <li>ценность связки для клиента</li>
-      <li>готовая формулировка для разговора с клиентом</li>
-    </ul>
-    <div class="resource-box">
-      📄 Совместный оффер — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
+    <nav class="section-nav">
+      <a data-scroll-to="card-why">Vitamin.tools + Carrot quest</a>
+      <a data-scroll-to="card-promo">Акция Carrot quest</a>
+      <a data-scroll-to="card-bonuses">Бонусы для продаж</a>
+    </nav>
+
+    <div id="card-why">
+      <h2>Почему Vitamin.tools + Carrot quest</h2>
+
+      <div class="why-block">
+        <span class="why-label">Основная идея партнёрства</span>
+        <p style="margin-top:0;">Синергия привлечения целевого трафика и его умной конвертации внутри одной экосистемы.</p>
+        <div class="why-cols">
+          <div class="why-col">
+            <span class="tag-vitamin">VITAMIN.TOOLS</span>
+            <h4>Эффективный трафик</h4>
+            <p style="font-size:14px;">Помогает оптимизировать и масштабировать привлечение целевой аудитории:</p>
+            <ul>
+              <li>управление рекламным бюджетом в одном окне</li>
+              <li>повышение эффективности рекламных кампаний</li>
+              <li>снижение стоимости привлечения лида</li>
+            </ul>
+          </div>
+          <div class="why-col">
+            <span class="tag-carrot">CARROT QUEST</span>
+            <h4>Умная конвертация</h4>
+            <p style="font-size:14px;">Превращает зашедших на сайт пользователей в постоянных клиентов:</p>
+            <ul>
+              <li>генерация качественных лидов и быстрые сделки</li>
+              <li>персонализированный путь клиента на сайте</li>
+              <li>повторные продажи и долгосрочные коммуникации</li>
+            </ul>
+          </div>
+        </div>
+        <div class="why-result">Результат: рост окупаемости инвестиций в маркетинг (<b>ROMI</b>) на каждом этапе воронки</div>
+      </div>
+
+      <div class="why-block">
+        <span class="why-label">Философия совместных продаж</span>
+        <h3>Продаём не Carrot quest как доп. сервис, а совместное решение для улучшения экономики воронки</h3>
+        <div class="offer-quote">«Получайте больше квалифицированных лидов и продаж из уже оплаченного рекламного трафика»</div>
+        <p style="font-size:14px;">Как это работает: Vitamin.tools эффективно привлекает и оптимизирует входящий трафик. А Carrot quest моментально подхватывает его на сайте для максимизации конверсии.</p>
+        <p style="font-size:12px;color:var(--lime);text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-top:22px;margin-bottom:10px;">Возможности Carrot quest</p>
+        <div class="why-cols">
+          <ul style="flex:1 1 260px;margin:0 0 0 18px;padding:0;font-size:14px;color:#d4d4d4;">
+            <li>конвертирует посетителей сайта в лиды</li>
+            <li>квалифицирует входящие обращения</li>
+            <li>быстрее передаёт горячих клиентов в продажи</li>
+          </ul>
+          <ul style="flex:1 1 260px;margin:0 0 0 18px;padding:0;font-size:14px;color:#d4d4d4;">
+            <li>возвращает посетителей, не оставивших заявку</li>
+            <li>прогревает аудиторию через email, Telegram и другие каналы</li>
+            <li>персонализирует коммуникации под источник рекламы</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="why-block">
+        <span class="why-label">Как продукты дополняют друг друга</span>
+        <p style="margin-top:0;">Совместная работа на каждом этапе воронки для максимизации результата.</p>
+        <table class="why-funnel-table">
+          <tr><th>Этап воронки</th><th>Vitamin.tools</th><th>Carrot quest</th></tr>
+          <tr><td>Привлечение</td><td>Реклама, рекламные кабинеты, оптимизация</td><td>Фиксация источника и поведения посетителя</td></tr>
+          <tr><td>Посадочная страница</td><td>Лендинги, A/B-тестирование, гиперсегментация</td><td>Персонализация, поп-апы, чат</td></tr>
+          <tr><td>Сбор лида</td><td>—</td><td>Лид-боты, формы, чат</td></tr>
+          <tr><td>Квалификация</td><td>—</td><td>Lead qualification, сценарии, scoring</td></tr>
+          <tr><td>Передача в продажи</td><td>—</td><td>Передача лидов и истории взаимодействия</td></tr>
+          <tr><td>Прогрев / повторный контакт</td><td>—</td><td>Email, Telegram, автоцепочки в мессенджерах</td></tr>
+          <tr><td>Оптимизация</td><td>Эффективность рекламных расходов</td><td>Конверсия трафика в лиды и сделки</td></tr>
+        </table>
+        <div class="why-result">Vitamin.tools приводит трафик. Carrot quest помогает не потерять его после перехода на сайт.</div>
+      </div>
+
+      <div class="why-block">
+        <span class="why-label">Vitamin.tools + Carrot quest: максимизация ROAS</span>
+        <p style="margin-top:0;">Совместное решение для повышения конверсии рекламного трафика в продажи.</p>
+        <div class="roas-grid">
+          <div class="roas-item">
+            <h4>Сквозная персонализация</h4>
+            <p><b>Распознавание рекламных кампаний.</b> Carrot quest мгновенно распознаёт UTM-метки кампаний из Vitamin.tools — мы точно знаем, по какому объявлению пришёл клиент, и бесшовно продолжаем коммуникацию на сайте.</p>
+          </div>
+          <div class="roas-item">
+            <h4>Эффективность бюджета</h4>
+            <p><b>Адаптивные сценарии на сайте.</b> Вместо «холодного» лендинга пользователь сразу видит оффер, релевантный его запросу — это снижает показатель отказов и стоимость лида (CPL).</p>
+          </div>
+        </div>
+        <div class="why-callout">Vitamin.tools приносит качественный трафик, а Carrot quest гарантирует его конверсию в реальные деньги.</div>
+      </div>
+
+      <div class="resource-box" style="margin-top:20px;">
+        📄 Совместный оффер — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
+      </div>
     </div>
 
-    <h2>Бонусы для команды продаж</h2>
-    <p>Условия получения бонуса от Carrot quest — за каждую продажу свой уровень.</p>
+    <div class="promo-card" id="card-promo">
+      <div class="promo-left">
+        <span class="promo-badge">Акция · Carrot quest</span>
+        <h2 class="promo-title">Дарим <span class="promo-highlight">10 000 ₽</span><br>на любые расширения</h2>
+        <p class="promo-desc">При покупке тарифов <b>Маркетинг</b> и <b>Маркетинг Эксперт</b> дарим бонус на подключение любого из расширений ниже.</p>
+        <ul class="promo-points">
+          <li>Бонусами оплачивается любой модуль на срок от одного месяца</li>
+          <li>Действует только при первой оплате</li>
+        </ul>
+        <div class="promo-activate">
+          <span class="promo-activate-label">Как активировать</span>
+          <p>Напишите в чат поддержки Carrot quest кодовое слово</p>
+          <span class="promo-code">Витамин</span>
+        </div>
+      </div>
+      <div class="promo-features">
+        <div class="feature-mini">
+          <span class="icon-circle" style="background:#FFE3D1;">📣</span>
+          <h4>Боты и рассылки в Telegram и MAX</h4>
+          <p>Создавайте чат-ботов, отправляйте триггерные и массовые рассылки.</p>
+        </div>
+        <div class="feature-mini">
+          <span class="icon-circle" style="background:#EAE4FF;">✨</span>
+          <h4>AI-бот</h4>
+          <p>Заменит первую линию поддержки, чтобы операторы могли сфокусироваться на более сложных задачах.</p>
+        </div>
+        <div class="feature-mini">
+          <span class="icon-circle" style="background:#DDF6EE;">🎧</span>
+          <h4>Поддержка+</h4>
+          <p>Автораспределение обращений, детальная аналитика по операторам и каналам, безлимитная база знаний.</p>
+        </div>
+        <div class="feature-mini">
+          <span class="icon-circle" style="background:var(--orange);">💬</span>
+          <h4>Welcome-bot</h4>
+          <p>Бот, который активируется при открытии виджета чата посетителем сайта.</p>
+        </div>
+        <div class="feature-mini">
+          <span class="icon-circle" style="background:#DCF2F1;">▶️</span>
+          <h4>Без брендинга</h4>
+          <p>Отключение упоминаний Carrot quest в чате, поп-апах и письмах + свой почтовый домен.</p>
+        </div>
+        <div class="feature-mini">
+          <span class="icon-circle" style="background:var(--orange);">✉️</span>
+          <h4>Дополнительный пакет Email</h4>
+          <p>Триггерные и массовые email-рассылки сверх квоты, заложенной в тариф по умолчанию.</p>
+        </div>
+      </div>
+    </div>
 
-    <div class="segment-grid equal-row">
-      <div class="usage-card accent-orange">
-        <h4>1-я любая продажа</h4>
-        <p><b>Бонус:</b> мерч — толстовка с любой надписью на ваш выбор</p>
-      </div>
-      <div class="usage-card accent-lime">
-        <h4>1-я продажа на 100k ₽ (суммарно)</h4>
-        <p><b>Бонус:</b> капсульная кофе-машина или Яндекс Станция Мини (на выбор)</p>
-      </div>
-      <div class="usage-card accent-orange">
-        <h4>1-я продажа на 500k ₽ (суммарно)</h4>
-        <p><b>Бонус:</b> Яндекс Станция Миди/Макс или робот-пылесос (на выбор)</p>
+    <div id="card-bonuses">
+      <h2>Бонусы для команды продаж</h2>
+      <p>Условия получения бонуса от Carrot quest — за каждую продажу свой уровень.</p>
+
+      <div class="segment-grid equal-row">
+        <div class="usage-card accent-orange">
+          <h4>1-я любая продажа</h4>
+          <p><b>Бонус:</b> мерч — толстовка с любой надписью на ваш выбор</p>
+        </div>
+        <div class="usage-card accent-lime">
+          <h4>1-я продажа на 100k ₽ (суммарно)</h4>
+          <p><b>Бонус:</b> капсульная кофе-машина или Яндекс Станция Мини (на выбор)</p>
+        </div>
+        <div class="usage-card accent-orange">
+          <h4>1-я продажа на 500k ₽ (суммарно)</h4>
+          <p><b>Бонус:</b> Яндекс Станция Миди/Макс или робот-пылесос (на выбор)</p>
+        </div>
       </div>
     </div>
   </section>
