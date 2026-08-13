@@ -469,7 +469,8 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 .blog-cta:hover { background: var(--orange); color: var(--black); }
 
 .why-block {
-  background: var(--black);
+  background: var(--white);
+  border: 2px solid var(--black);
   border-radius: 20px;
   padding: 32px 34px;
   margin: 20px 0;
@@ -480,13 +481,13 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: var(--orange-dark);
   margin-bottom: 14px;
   display: inline-block;
 }
 
-.why-block h3 { color: var(--white); font-size: 20px; margin: 0 0 14px; border-top: none; padding-top: 0; }
-.why-block p { color: #d4d4d4; }
+.why-block h3 { color: var(--black); font-size: 20px; margin: 0 0 14px; border-top: none; padding-top: 0; }
+.why-block p { color: var(--gray-600); }
 
 .tag-vitamin, .tag-carrot {
   display: inline-flex;
@@ -499,30 +500,30 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
   margin-bottom: 10px;
   border: 1.5px solid;
 }
-.tag-vitamin { border-color: var(--orange); color: var(--orange); }
-.tag-carrot { border-color: var(--lime); color: var(--lime); }
+.tag-vitamin { border-color: var(--orange); color: var(--orange-dark); background: rgba(252,124,1,.08); }
+.tag-carrot { border-color: var(--black); color: var(--black); background: var(--lime); }
 
 .why-cols { display: flex; gap: 24px; flex-wrap: wrap; }
 .why-col { flex: 1 1 260px; }
-.why-col h4 { color: var(--white); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; margin: 4px 0 10px; }
-.why-col ul { margin: 0 0 0 18px; padding: 0; font-size: 14px; color: #d4d4d4; }
+.why-col h4 { color: var(--black); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; margin: 4px 0 10px; }
+.why-col ul { margin: 0 0 0 18px; padding: 0; font-size: 14px; color: var(--gray-600); }
 .why-col ul li { margin-bottom: 6px; }
 
 .why-result {
   margin-top: 20px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  color: #ececec;
+  border-top: 1.5px solid var(--gray-300);
+  color: var(--gray-900);
   font-size: 14px;
 }
-.why-result b { color: var(--lime); }
+.why-result b { color: var(--orange-dark); }
 
 .offer-quote {
-  background: rgba(208,255,55,.1);
-  border: 1px solid var(--lime);
+  background: var(--lime);
+  border: none;
   border-radius: 12px;
   padding: 16px 20px;
-  color: var(--white);
+  color: var(--black);
   font-weight: 700;
   font-size: 15px;
   margin: 14px 0 18px;
@@ -530,27 +531,27 @@ ul.points li, ol.points li { margin-bottom: 2px; line-height: 1.4; }
 
 .why-funnel-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13.5px; }
 .why-funnel-table th {
-  color: var(--lime);
+  color: var(--orange-dark);
   text-align: left;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 10px 12px;
-  border-bottom: 1px solid rgba(255,255,255,.15);
+  border-bottom: 2px solid var(--black);
 }
-.why-funnel-table td { color: #d4d4d4; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
-.why-funnel-table td:first-child { color: var(--white); font-weight: 700; }
+.why-funnel-table td { color: var(--gray-600); padding: 10px 12px; border-bottom: 1px solid var(--gray-300); vertical-align: top; }
+.why-funnel-table td:first-child { color: var(--black); font-weight: 700; }
 
 .roas-grid { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 18px; }
-.roas-item { flex: 1 1 260px; background: rgba(255,255,255,.05); border-radius: 12px; padding: 20px; }
-.roas-item h4 { color: var(--lime); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px; }
-.roas-item p { color: #ececec; font-size: 14px; margin: 0; }
-.roas-item b { color: var(--white); }
+.roas-item { flex: 1 1 260px; background: var(--gray-100); border-radius: 12px; padding: 20px; }
+.roas-item h4 { color: var(--orange-dark); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px; }
+.roas-item p { color: var(--gray-900); font-size: 14px; margin: 0; }
+.roas-item b { color: var(--black); }
 
 .why-callout {
   margin-top: 18px;
-  background: var(--lime);
-  color: var(--black);
+  background: var(--black);
+  color: var(--lime);
   border-radius: 12px;
   padding: 16px 20px;
   font-weight: 700;
@@ -1250,14 +1251,14 @@ footer {
         <h3>Продаём не Carrot quest как доп. сервис, а совместное решение для улучшения экономики воронки</h3>
         <div class="offer-quote">«Получайте больше квалифицированных лидов и продаж из уже оплаченного рекламного трафика»</div>
         <p style="font-size:14px;">Как это работает: Vitamin.tools эффективно привлекает и оптимизирует входящий трафик. А Carrot quest моментально подхватывает его на сайте для максимизации конверсии.</p>
-        <p style="font-size:12px;color:var(--lime);text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-top:22px;margin-bottom:10px;">Возможности Carrot quest</p>
+        <p style="font-size:12px;color:var(--orange-dark);text-transform:uppercase;letter-spacing:0.04em;font-weight:700;margin-top:22px;margin-bottom:10px;">Возможности Carrot quest</p>
         <div class="why-cols">
-          <ul style="flex:1 1 260px;margin:0 0 0 18px;padding:0;font-size:14px;color:#d4d4d4;">
+          <ul style="flex:1 1 260px;margin:0 0 0 18px;padding:0;font-size:14px;color:#5c5c5c;">
             <li>конвертирует посетителей сайта в лиды</li>
             <li>квалифицирует входящие обращения</li>
             <li>быстрее передаёт горячих клиентов в продажи</li>
           </ul>
-          <ul style="flex:1 1 260px;margin:0 0 0 18px;padding:0;font-size:14px;color:#d4d4d4;">
+          <ul style="flex:1 1 260px;margin:0 0 0 18px;padding:0;font-size:14px;color:#5c5c5c;">
             <li>возвращает посетителей, не оставивших заявку</li>
             <li>прогревает аудиторию через email, Telegram и другие каналы</li>
             <li>персонализирует коммуникации под источник рекламы</li>
@@ -1295,10 +1296,6 @@ footer {
           </div>
         </div>
         <div class="why-callout">Vitamin.tools приносит качественный трафик, а Carrot quest гарантирует его конверсию в реальные деньги.</div>
-      </div>
-
-      <div class="resource-box" style="margin-top:20px;">
-        📄 Совместный оффер — <a href="#">ССЫЛКА</a><span class="todo">TODO: ссылка</span>
       </div>
     </div>
 
